@@ -12,14 +12,14 @@ var __assign = (this && this.__assign) || function () {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Toaster = void 0;
-var KassiopeiaAnimationTool_1 = require("../animation/KassiopeiaAnimationTool");
+var AnimationKassiopeiaTool_1 = require("../animation/AnimationKassiopeiaTool");
 var html_1 = require("../html");
-var KassiopeiaToasterTool_1 = require("./KassiopeiaToasterTool");
+var ToasterKassiopeiaTool_1 = require("./ToasterKassiopeiaTool");
 var Toaster = /** @class */ (function () {
     function Toaster(message, config, onClick, onHide, anim) {
         if (onClick === void 0) { onClick = null; }
         if (onHide === void 0) { onHide = null; }
-        if (anim === void 0) { anim = KassiopeiaAnimationTool_1.KassiopeiaAnimationTool.get(); }
+        if (anim === void 0) { anim = AnimationKassiopeiaTool_1.AnimationKassiopeiaTool.get(); }
         this.message = message;
         this.config = config;
         this.onClick = onClick;
@@ -39,7 +39,7 @@ var Toaster = /** @class */ (function () {
     Toaster.prototype.configureYourself = function () {
         var _this = this;
         var _a = this.config.container, useVectorWithPercentage = _a.useVectorWithPercentage, position3D = _a.position3D, border = _a.border, maxWidth = _a.maxWidth, boundary = _a.boundary, centerOnScreen = _a.centerOnScreen;
-        var len = KassiopeiaToasterTool_1.KassiopeiaToasterTool.toasters.filter(function (toaster) {
+        var len = ToasterKassiopeiaTool_1.ToasterKassiopeiaTool.toasters.filter(function (toaster) {
             return toaster &&
                 toaster.isOnScreen &&
                 toaster.id !== _this.id &&
