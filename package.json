@@ -6,8 +6,7 @@
   "scripts": {
     "build": "tsc",
     "web:build": "webpack",
-    "web:dev": "webpack -w",
-    "publish": "tsc && publish"
+    "web:dev": "webpack -w"
   },
   "keywords": [
     "tools",
