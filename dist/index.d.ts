@@ -22,5 +22,6 @@ export declare const KassiopeiaTools: {
     generatePopup: typeof generatePopup;
     generateHTML: typeof generateHTML;
 };
+export { AnimationKassiopeiaTool, HTMLKassiopeiaTool, ImageKassiopeiaProcessingTool, PopupKassiopeiaTool, ValidationKassiopeiaTool, ToasterKassiopeiaTool, Vec2D, Vec3D, generatePopup, generateHTML, };
 export type { IHTMLGenerator, IToasterBG, IToasterBar, IToasterConfig, IToasterCustomConfig, IToasterFont, IToasterIcon, IToasterSpecificConfig, };
 export default KassiopeiaTools;

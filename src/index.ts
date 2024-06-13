@@ -44,6 +44,19 @@ export const KassiopeiaTools = {
   generateHTML,
 };
 
+export {
+  AnimationKassiopeiaTool,
+  HTMLKassiopeiaTool,
+  ImageKassiopeiaProcessingTool,
+  PopupKassiopeiaTool,
+  ValidationKassiopeiaTool,
+  ToasterKassiopeiaTool,
+  Vec2D,
+  Vec3D,
+  generatePopup,
+  generateHTML,
+};
+
 export type {
   IHTMLGenerator,
   IToasterBG,
@@ -56,34 +69,3 @@ export type {
 };
 
 export default KassiopeiaTools;
-
-// (window as any).KassiopeiaTools = KassiopeiaTools;
-
-// const toaster = KassiopeiaToasterTool.get();
-
-// document.getElementById('toasteri').onclick = () =>
-//   toaster.info('Testando o toaster info', 30000).listeners(console.log, console.log);
-// document.getElementById('toasters').onclick = () => toaster.success('Testando o toaster success');
-// document.getElementById('toasterd').onclick = () => toaster.danger('Testando o toaster danger');
-// document.getElementById('toasterw').onclick = () => toaster.warn('Testando o toaster warn');
-// document.getElementById('toasterc').onclick = () =>
-//   toaster.customToaster(
-//     'Testando o toaster warn',
-//     {
-//       background: { color: 'black', padding: Vec2D.of(8, 8), useVectorWithRem: false, opacity: 1 },
-//       hideOnClick: true,
-//       container: {
-//         position3D: Vec3D.of(5, 5, 999),
-//         outSide: 'top',
-//         boundary: { x: 'start', y: 'top' },
-//         useVectorWithPercentage: true,
-//       },
-//       // progressBar: { color: 'green', height: 4, time: 5000 },
-//       text: { color: 'red' },
-//       icon: {
-//         type: 'html',
-//         source: generateHTML({ tag: 'i', attributes: { class: 'bi bi-0-square-fill' } }),
-//       },
-//     },
-//     12000
-//   );
