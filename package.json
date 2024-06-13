@@ -1,12 +1,17 @@
 {
   "name": "kassiopeia-tools",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "web:build": "webpack",
-    "web:dev": "webpack -w"
+    "web:dev": "webpack -w",
+    "pb": "tsc && yarn publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oGabrielSilva/kassiopeia-tools"
   },
   "keywords": [
     "tools",
