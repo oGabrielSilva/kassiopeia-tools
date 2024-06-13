@@ -51,12 +51,16 @@ export class KassiopeiaToasterTool {
       message,
       {
         background: config.background,
-        bar: {
-          ...config.bar,
-          ...(timeInMilliseconds && typeof timeInMilliseconds === 'number'
-            ? { time: timeInMilliseconds }
-            : {}),
-        },
+        ...(config.bar
+          ? {
+              bar: {
+                ...config.bar,
+                ...(timeInMilliseconds && typeof timeInMilliseconds === 'number'
+                  ? { time: timeInMilliseconds }
+                  : {}),
+              },
+            }
+          : {}),
         hideOnClick: config.hideOnClick,
         icon: config.icon,
         text: config.text,
@@ -175,10 +179,10 @@ export class KassiopeiaToasterTool {
         warn: { color: '#1c2003', size: 14, font: 'JetBrains Mono' },
       },
       icon: {
-        info: { source: infoIcon('#ffffff'), type: 'html' },
-        success: { source: successIcon('#f9f9f9'), type: 'html' },
-        danger: { source: dangerIcon('#f5f5f5'), type: 'html' },
-        warn: { source: warnIcon('#1c2003'), type: 'html' },
+        info: { source: infoIcon('#ffffff'), type: 'innerHTML' },
+        success: { source: successIcon('#f9f9f9'), type: 'innerHTML' },
+        danger: { source: dangerIcon('#f5f5f5'), type: 'innerHTML' },
+        warn: { source: warnIcon('#1c2003'), type: 'innerHTML' },
       },
       progressBar: {
         info: { color: '#ffffff', height: 2, time: 10000 },

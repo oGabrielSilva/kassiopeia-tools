@@ -34,7 +34,12 @@ export class Toaster {
       this.config.container;
 
     let len = KassiopeiaToasterTool.toasters.filter(
-      (toaster) => toaster && toaster.isOnScreen && toaster.id !== this.id
+      (toaster) =>
+        toaster &&
+        toaster.isOnScreen &&
+        toaster.id !== this.id &&
+        toaster.config.container.boundary.x === boundary.x &&
+        toaster.config.container.boundary.y === boundary.y
     ).length;
 
     if (len > 0) len += 1;
@@ -118,6 +123,23 @@ export class Toaster {
 
     const font = this.config.text;
 
+    if (this.config.icon) {
+      if (this.config.icon.type === 'innerHTML') {
+        this.icon = document.createElement('span');
+
+        if (typeof this.config.icon.source === 'string')
+          this.icon.innerHTML = this.config.icon.source as string;
+      } else if (this.config.icon.source instanceof HTMLElement) {
+        this.icon = this.config.icon.source;
+      }
+
+      if (this.icon instanceof HTMLElement) {
+        this.icon.style.display = 'flex';
+        this.icon.style.color = this.config.text.color;
+        this.background.appendChild(this.icon);
+      }
+    }
+
     this.text = generateHTML({
       tag: 'p',
       css: {
@@ -130,40 +152,32 @@ export class Toaster {
       textContent: this.message,
     });
 
-    if (this.config.icon) {
-      if (this.config.icon.type === 'innerHTML') {
-        this.icon = document.createElement('div');
-        this.icon.replaceWith(this.config.icon.source as string);
-      } else if (this.config.icon.source instanceof HTMLElement) {
-        this.icon = this.config.icon.source;
-      }
-    }
-
-    const bar = this.config.bar;
-
-    this.progressBar = generateHTML({
-      tag: 'div',
-      css: {
-        borderTop: `${bar.height}px solid ${bar.color}`,
-        width: '100%',
-        position: 'absolute',
-        bottom: '0',
-        transition: `all ${bar.time}ms`,
-      },
-    });
-
-    if (this.icon instanceof HTMLElement) this.background.appendChild(this.icon);
-
     this.background.appendChild(this.text);
     this.container.appendChild(this.background);
-    this.container.appendChild(this.progressBar);
 
-    setTimeout(() => {
-      this.progressBar.style.transform = 'translateX(-105%)';
+    if (this.config.bar) {
+      const bar = this.config.bar;
+
+      this.progressBar = generateHTML({
+        tag: 'div',
+        css: {
+          borderTop: `${bar.height}px solid ${bar.color}`,
+          width: '100%',
+          position: 'absolute',
+          bottom: '0',
+          transition: `all ${bar.time}ms`,
+        },
+      });
+
+      this.container.appendChild(this.progressBar);
+
       setTimeout(() => {
-        this.destroy();
-      }, bar.time);
-    }, 100);
+        this.progressBar.style.transform = 'translateX(-105%)';
+        setTimeout(() => {
+          this.destroy();
+        }, bar.time);
+      }, 100);
+    }
   }
 
   protected show() {
@@ -173,6 +187,7 @@ export class Toaster {
     setTimeout(() => (this.container.style.opacity = ''), 10);
 
     const elm = document.body.appendChild(this.container);
+
     this.anim.bounceInDown(elm);
   }
 
