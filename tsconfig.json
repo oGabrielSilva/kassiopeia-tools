@@ -3,12 +3,14 @@
     "module": "commonjs",
     "target": "es5",
     "declaration": true,
+    "declarationDir": "dist",
     "outDir": "./dist/",
     "sourceMap": true,
     "noImplicitAny": true,
     "jsx": "react",
     "allowJs": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "rootDir": "src"
   },
   "include": ["src/**/*"]
 }

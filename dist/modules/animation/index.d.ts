@@ -1,3 +1,2 @@
 import { KassiopeiaAnimationTool } from './KassiopeiaAnimationTool';
-
-export const anim = KassiopeiaAnimationTool.get();
+export declare const anim: KassiopeiaAnimationTool;

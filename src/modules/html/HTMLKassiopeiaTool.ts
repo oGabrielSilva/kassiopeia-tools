@@ -1,19 +1,19 @@
 import type * as CSS from 'csstype';
 
-export interface IGen {
+export interface IHTMLGenerator {
   tag: string;
   attributes?: Record<string, any>;
   textContent?: string;
   css?: CSS.Properties;
   onClick?: (event: Event, element: HTMLElement) => void;
-  children?: IGen[];
+  children?: IHTMLGenerator[];
   innerHTML?: string;
 }
 
-export class KassiopeiaHtmlTool {
-  protected static instance: KassiopeiaHtmlTool = null;
+export class HTMLKassiopeiaTool {
+  protected static instance: HTMLKassiopeiaTool = null;
 
-  public generateHTML<T = HTMLElement>(options: IGen) {
+  public generateHTML<T = HTMLElement>(options: IHTMLGenerator) {
     const { tag, attributes, css, onClick, textContent, children, innerHTML } = options;
     const element = document.createElement(tag);
 
@@ -50,9 +50,9 @@ export class KassiopeiaHtmlTool {
   }
 
   public static get() {
-    if (!(KassiopeiaHtmlTool.instance instanceof KassiopeiaHtmlTool)) {
-      KassiopeiaHtmlTool.instance = new KassiopeiaHtmlTool();
+    if (!(HTMLKassiopeiaTool.instance instanceof HTMLKassiopeiaTool)) {
+      HTMLKassiopeiaTool.instance = new HTMLKassiopeiaTool();
     }
-    return KassiopeiaHtmlTool.instance;
+    return HTMLKassiopeiaTool.instance;
   }
 }

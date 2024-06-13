@@ -1,5 +1,5 @@
-export class ImageProcessingTool {
-  protected static instance: ImageProcessingTool;
+export class ImageKassiopeiaProcessingTool {
+  protected static instance: ImageKassiopeiaProcessingTool;
 
   protected constructor() {}
 
@@ -237,9 +237,9 @@ export class ImageProcessingTool {
   }
 
   public static get() {
-    if (!(ImageProcessingTool.instance instanceof ImageProcessingTool)) {
-      ImageProcessingTool.instance = new ImageProcessingTool();
+    if (!(ImageKassiopeiaProcessingTool.instance instanceof ImageKassiopeiaProcessingTool)) {
+      ImageKassiopeiaProcessingTool.instance = new ImageKassiopeiaProcessingTool();
     }
-    return ImageProcessingTool.instance;
+    return ImageKassiopeiaProcessingTool.instance;
   }
 }

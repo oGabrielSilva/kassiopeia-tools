@@ -1,8 +1,7 @@
 import { generateHTML } from '../html';
-import { shakeCSS } from './cssString';
 
-export class KassiopeiaAnimationTool {
-  protected static instance: KassiopeiaAnimationTool = null;
+export class AnimationKassiopeiaTool {
+  protected static instance: AnimationKassiopeiaTool = null;
 
   protected readonly principalClassName = 'animate__animated';
   protected readonly animateTemplate = 'animate__';
@@ -289,15 +288,15 @@ export class KassiopeiaAnimationTool {
   }
 
   public static get() {
-    if (!(KassiopeiaAnimationTool.instance instanceof KassiopeiaAnimationTool)) {
-      KassiopeiaAnimationTool.instance = new KassiopeiaAnimationTool();
-      KassiopeiaAnimationTool.instance.configure();
+    if (!(AnimationKassiopeiaTool.instance instanceof AnimationKassiopeiaTool)) {
+      AnimationKassiopeiaTool.instance = new AnimationKassiopeiaTool();
+      AnimationKassiopeiaTool.instance.configure();
 
       console.log(
         "Kassiopeia Tools' animation module uses Animate.css - See more at https://animate.style"
       );
     }
 
-    return KassiopeiaAnimationTool.instance;
+    return AnimationKassiopeiaTool.instance;
   }
 }

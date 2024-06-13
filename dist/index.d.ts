@@ -1,0 +1,21 @@
+import { generateHTML } from './modules/html';
+import { KassiopeiaHtmlTool } from './modules/html/KassiopeiaHtmlTool';
+import { generatePopup } from './modules/popup';
+import { KassiopeiaPopupTool } from './modules/popup/KassiopeiaPopupTool';
+import { ImageProcessingTool } from './modules/image/ImageProcessingTool';
+import { KassiopeiaValidationTool } from './modules/validation/KassiopeiaValidationTool';
+import { KassiopeiaAnimationTool } from './modules/animation/KassiopeiaAnimationTool';
+import { Vec3D } from './modules/toaster/Vec3D';
+import { KassiopeiaToasterTool } from './modules/toaster/KassiopeiaToasterTool';
+declare const KassiopeiaTools: {
+    KassiopeiaHtmlTool: typeof KassiopeiaHtmlTool;
+    KassiopeiaPopupTool: typeof KassiopeiaPopupTool;
+    ImageProcessingTool: typeof ImageProcessingTool;
+    KassiopeiaValidationTool: typeof KassiopeiaValidationTool;
+    KassiopeiaAnimationTool: typeof KassiopeiaAnimationTool;
+    Vec3D: typeof Vec3D;
+    KassiopeiaToasterTool: typeof KassiopeiaToasterTool;
+    generateHTML: typeof generateHTML;
+    generatePopup: typeof generatePopup;
+};
+export { KassiopeiaTools, KassiopeiaHtmlTool, KassiopeiaPopupTool, ImageProcessingTool, KassiopeiaAnimationTool, Vec3D, KassiopeiaToasterTool, generateHTML, generatePopup, };

@@ -1,4 +1,4 @@
-import { KassiopeiaAnimationTool } from '../animation/KassiopeiaAnimationTool';
+import { AnimationKassiopeiaTool } from '../animation/AnimationKassiopeiaTool';
 import { Toaster } from './Toaster';
 import { Vec2D } from './Vec2D';
 import { Vec3D } from './Vec3D';
@@ -8,11 +8,11 @@ import { successIcon } from './icons/success';
 import { warnIcon } from './icons/warn';
 import type { IToasterConfig, IToasterCustomConfig, IToasterSpecificConfig } from './types';
 
-export class KassiopeiaToasterTool {
-  protected static instance: KassiopeiaToasterTool = null;
+export class ToasterKassiopeiaTool {
+  protected static instance: ToasterKassiopeiaTool = null;
   public static readonly toasters: Toaster[] = [];
 
-  public readonly animationTool = KassiopeiaAnimationTool.get();
+  public readonly animationTool = AnimationKassiopeiaTool.get();
   protected config;
 
   /**
@@ -24,13 +24,13 @@ export class KassiopeiaToasterTool {
    * Example usage:
    * ```typescript
    * // Deprecated usage
-   * const toaster = new KassiopeiaToasterTool(config);
+   * const toaster = new ToasterKassiopeiaTool(config);
    *
    * // Recommended usage
-   * const toaster = KassiopeiaToasterTool.get();
+   * const toaster = ToasterKassiopeiaTool.get();
    *
    * //OR
-   * const toaster = KassiopeiaToasterTool.getConfigured(config);
+   * const toaster = ToasterKassiopeiaTool.getConfigured(config);
    * ```
    */
   constructor(config: IToasterConfig) {
@@ -38,8 +38,8 @@ export class KassiopeiaToasterTool {
   }
 
   public destroyInstance() {
-    KassiopeiaToasterTool.toasters.forEach((toaster) => toaster.root().destroy());
-    KassiopeiaToasterTool.instance = null;
+    ToasterKassiopeiaTool.toasters.forEach((toaster) => toaster.root().destroy());
+    ToasterKassiopeiaTool.instance = null;
   }
 
   protected createToaster(
@@ -70,7 +70,7 @@ export class KassiopeiaToasterTool {
       () => null,
       this.animationTool
     );
-    KassiopeiaToasterTool.toasters.push(toaster);
+    ToasterKassiopeiaTool.toasters.push(toaster);
 
     toaster.root().configureYourself();
     toaster.root().show();
@@ -195,18 +195,18 @@ export class KassiopeiaToasterTool {
   }
 
   public static get() {
-    if (!KassiopeiaToasterTool.instance) {
-      KassiopeiaToasterTool.instance = new KassiopeiaToasterTool(
-        KassiopeiaToasterTool.defaultConfiguration()
+    if (!ToasterKassiopeiaTool.instance) {
+      ToasterKassiopeiaTool.instance = new ToasterKassiopeiaTool(
+        ToasterKassiopeiaTool.defaultConfiguration()
       );
     }
 
-    KassiopeiaToasterTool.instance.changeConfig(KassiopeiaToasterTool.defaultConfiguration());
-    return KassiopeiaToasterTool.instance;
+    ToasterKassiopeiaTool.instance.changeConfig(ToasterKassiopeiaTool.defaultConfiguration());
+    return ToasterKassiopeiaTool.instance;
   }
 
   public static getConfigured(config: IToasterConfig) {
-    const instance = KassiopeiaToasterTool.get();
+    const instance = ToasterKassiopeiaTool.get();
     instance.config = config;
     return instance;
   }

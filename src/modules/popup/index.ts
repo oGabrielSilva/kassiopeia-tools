@@ -1,5 +1,5 @@
-import { KassiopeiaPopupTool } from './KassiopeiaPopupTool';
+import { PopupKassiopeiaTool } from './PopupKassiopeiaTool';
 
 export function generatePopup(uri: string, width?: number, height?: number) {
-  return KassiopeiaPopupTool.get().generate(uri, width, height);
+  return PopupKassiopeiaTool.get().generate(uri, width, height);
 }

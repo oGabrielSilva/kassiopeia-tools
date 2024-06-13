@@ -1,5 +1,5 @@
-export class KassiopeiaPopupTool {
-  protected static instance: KassiopeiaPopupTool = null;
+export class PopupKassiopeiaTool {
+  protected static instance: PopupKassiopeiaTool = null;
 
   public generate(uri: string, width = 420, height = 580) {
     return window.open(
@@ -12,9 +12,9 @@ export class KassiopeiaPopupTool {
   }
 
   public static get() {
-    if (!(KassiopeiaPopupTool.instance instanceof KassiopeiaPopupTool)) {
-      KassiopeiaPopupTool.instance = new KassiopeiaPopupTool();
+    if (!(PopupKassiopeiaTool.instance instanceof PopupKassiopeiaTool)) {
+      PopupKassiopeiaTool.instance = new PopupKassiopeiaTool();
     }
-    return KassiopeiaPopupTool.instance;
+    return PopupKassiopeiaTool.instance;
   }
 }

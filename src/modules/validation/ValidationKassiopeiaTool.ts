@@ -1,5 +1,5 @@
-export class KassiopeiaValidationTool {
-  protected static instance: KassiopeiaValidationTool = null;
+export class ValidationKassiopeiaTool {
+  protected static instance: ValidationKassiopeiaTool = null;
 
   public static readonly emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   public static readonly URLRegex =
@@ -9,7 +9,7 @@ export class KassiopeiaValidationTool {
     return (
       typeof url === 'string' &&
       !url.startsWith('http:') &&
-      KassiopeiaValidationTool.URLRegex.test(url)
+      ValidationKassiopeiaTool.URLRegex.test(url)
     );
   }
 
@@ -18,7 +18,7 @@ export class KassiopeiaValidationTool {
   }
 
   public isEmailValid(email: string) {
-    return typeof email === 'string' && KassiopeiaValidationTool.emailRegex.test(email);
+    return typeof email === 'string' && ValidationKassiopeiaTool.emailRegex.test(email);
   }
 
   public isPasswordValid(password: string): boolean {
@@ -43,9 +43,9 @@ export class KassiopeiaValidationTool {
   }
 
   public static get() {
-    if (!(KassiopeiaValidationTool.instance instanceof KassiopeiaValidationTool)) {
-      KassiopeiaValidationTool.instance = new KassiopeiaValidationTool();
+    if (!(ValidationKassiopeiaTool.instance instanceof ValidationKassiopeiaTool)) {
+      ValidationKassiopeiaTool.instance = new ValidationKassiopeiaTool();
     }
-    return KassiopeiaValidationTool.instance;
+    return ValidationKassiopeiaTool.instance;
   }
 }

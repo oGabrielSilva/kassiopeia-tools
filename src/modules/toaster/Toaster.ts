@@ -1,6 +1,6 @@
-import { KassiopeiaAnimationTool } from '../animation/KassiopeiaAnimationTool';
+import { AnimationKassiopeiaTool } from '../animation/AnimationKassiopeiaTool';
 import { generateHTML } from '../html';
-import { KassiopeiaToasterTool } from './KassiopeiaToasterTool';
+import { ToasterKassiopeiaTool } from './ToasterKassiopeiaTool';
 import type { IToasterSpecificConfig } from './types';
 
 export class Toaster {
@@ -26,14 +26,14 @@ export class Toaster {
     protected onClick: (event: Event, target: HTMLElement, context: Toaster) => void = null,
     protected onHide: (context: Toaster) => void = null,
 
-    protected readonly anim = KassiopeiaAnimationTool.get()
+    protected readonly anim = AnimationKassiopeiaTool.get()
   ) {}
 
   protected configureYourself() {
     const { useVectorWithPercentage, position3D, border, maxWidth, boundary, centerOnScreen } =
       this.config.container;
 
-    let len = KassiopeiaToasterTool.toasters.filter(
+    let len = ToasterKassiopeiaTool.toasters.filter(
       (toaster) =>
         toaster &&
         toaster.isOnScreen &&
