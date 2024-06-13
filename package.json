@@ -1,17 +1,35 @@
 {
   "name": "kassiopeia-tools",
-  "version": "0.0.0",
+  "version": "0.1.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "web:build": "webpack",
-    "web:dev": "webpack -w"
+    "web:dev": "webpack -w",
+    "publish": "tsc && publish"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "tools",
+    "image",
+    "image processing",
+    "popup",
+    "animations",
+    "css",
+    "html",
+    "generator",
+    "toaster",
+    "validation",
+    "email validation",
+    "kassiopeia"
+  ],
+  "author": {
+    "email": "odev.gabriel@gmail.com",
+    "name": "Gabriel Henrique da Silva",
+    "url": "https://gabrielhenriquedasilva.vercel.app/"
+  },
   "license": "MIT",
-  "description": "",
+  "description": "A package that brings together several tools used in the Kassiopeia project",
   "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
   "devDependencies": {
     "csstype": "^3.1.3",
