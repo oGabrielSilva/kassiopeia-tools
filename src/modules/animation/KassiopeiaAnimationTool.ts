@@ -15,30 +15,14 @@ export class KassiopeiaAnimationTool {
     },
   });
 
-  protected cssHtmlShake: HTMLStyleElement = null;
-  protected htmlShakeClassName = 'kassiopeia-anim-shake';
-
-  //methods
-
-  protected configureShake() {
-    this.cssHtmlShake = generateHTML<HTMLStyleElement>({
-      tag: 'style',
-      innerHTML: shakeCSS,
-    });
-
-    document.head.appendChild(this.cssHtmlShake);
-  }
-
   protected configure() {
-    this.configureShake();
     document.head.appendChild(this.animateCSS);
   }
 
-  protected byAnimateCSS(element: HTMLElement, animationName: string) {
-    setTimeout(() => {
-      element.classList.add(this.principalClassName);
-      element.classList.add(`${this.animateTemplate}${animationName}`);
-    }, 10);
+  protected byAnimateCSS(element: HTMLElement, animationName: string, time: number) {
+    element.style.animationDuration = time + 'ms';
+    element.classList.add(this.principalClassName);
+    element.classList.add(`${this.animateTemplate}${animationName}`);
   }
 
   protected cleanAnimateCSS(element: HTMLElement, animationName: string, event?: () => void) {
@@ -56,25 +40,13 @@ export class KassiopeiaAnimationTool {
     }
   }
 
-  public shake(element: HTMLElement, focus = true, time = 500) {
+  public bounce(element: HTMLElement, focus = true, time = 1010) {
     if (element instanceof HTMLElement) {
-      if (focus) element.focus();
-
-      if (element.classList.contains(this.htmlShakeClassName))
-        element.classList.remove(this.htmlShakeClassName);
-
-      element.classList.add(this.htmlShakeClassName);
-
-      setTimeout(() => element.classList.remove(this.htmlShakeClassName), time);
-    }
-  }
-
-  public bounce(element: HTMLElement, focus = true, time = 2000) {
-    if (element instanceof HTMLElement) {
+      this.clean(element);
       const animationName = 'bounce';
       if (focus) element.focus();
 
-      this.byAnimateCSS(element, animationName);
+      this.byAnimateCSS(element, animationName, time);
 
       let onComplete = () => {};
       setTimeout(() => {
@@ -84,12 +56,29 @@ export class KassiopeiaAnimationTool {
     }
   }
 
-  public flash(element: HTMLElement, focus = true, time = 2000) {
+  public bounceInDown(element: HTMLElement, focus = true, time = 1010) {
     if (element instanceof HTMLElement) {
+      this.clean(element);
+      const animationName = 'bounceInDown';
+      if (focus) element.focus();
+
+      this.byAnimateCSS(element, animationName, time);
+
+      let onComplete = () => {};
+      setTimeout(() => {
+        onComplete();
+      }, time - 10);
+      return { addEventOnCompletion: (cb: () => void) => (onComplete = cb) };
+    }
+  }
+
+  public flash(element: HTMLElement, focus = true, time = 1010) {
+    if (element instanceof HTMLElement) {
+      this.clean(element);
       const animationName = 'flash';
       if (focus) element.focus();
 
-      this.byAnimateCSS(element, animationName);
+      this.byAnimateCSS(element, animationName, time);
 
       let onComplete = () => {};
       setTimeout(() => {
@@ -99,12 +88,13 @@ export class KassiopeiaAnimationTool {
     }
   }
 
-  public shakeX(element: HTMLElement, focus = true, time = 2000) {
+  public shakeX(element: HTMLElement, focus = true, time = 1010) {
     if (element instanceof HTMLElement) {
+      this.clean(element);
       const animationName = 'shakeX';
       if (focus) element.focus();
 
-      this.byAnimateCSS(element, animationName);
+      this.byAnimateCSS(element, animationName, time);
 
       let onComplete = () => {};
       setTimeout(() => {
@@ -114,12 +104,13 @@ export class KassiopeiaAnimationTool {
     }
   }
 
-  public shakeY(element: HTMLElement, focus = true, time = 2000) {
+  public shakeY(element: HTMLElement, focus = true, time = 1010) {
     if (element instanceof HTMLElement) {
+      this.clean(element);
       const animationName = 'shakeY';
       if (focus) element.focus();
 
-      this.byAnimateCSS(element, animationName);
+      this.byAnimateCSS(element, animationName, time);
 
       let onComplete = () => {};
       setTimeout(() => {
@@ -129,12 +120,13 @@ export class KassiopeiaAnimationTool {
     }
   }
 
-  public heartBeat(element: HTMLElement, focus = true, time = 2000) {
+  public heartBeat(element: HTMLElement, focus = true, time = 1010) {
     if (element instanceof HTMLElement) {
+      this.clean(element);
       const animationName = 'heartBeat';
       if (focus) element.focus();
 
-      this.byAnimateCSS(element, animationName);
+      this.byAnimateCSS(element, animationName, time);
 
       let onComplete = () => {};
       setTimeout(() => {
@@ -144,12 +136,13 @@ export class KassiopeiaAnimationTool {
     }
   }
 
-  public backInDown(element: HTMLElement, focus = true, time = 2000) {
+  public backInDown(element: HTMLElement, focus = true, time = 1010) {
     if (element instanceof HTMLElement) {
+      this.clean(element);
       const animationName = 'backInDown';
       if (focus) element.focus();
 
-      this.byAnimateCSS(element, animationName);
+      this.byAnimateCSS(element, animationName, time);
 
       let onComplete = () => {};
       setTimeout(() => {
@@ -159,12 +152,13 @@ export class KassiopeiaAnimationTool {
     }
   }
 
-  public backInLeft(element: HTMLElement, focus = true, time = 2000) {
+  public backInLeft(element: HTMLElement, focus = true, time = 1010) {
     if (element instanceof HTMLElement) {
+      this.clean(element);
       const animationName = 'backInLeft';
       if (focus) element.focus();
 
-      this.byAnimateCSS(element, animationName);
+      this.byAnimateCSS(element, animationName, time);
 
       let onComplete = () => {};
       setTimeout(() => {
@@ -174,12 +168,13 @@ export class KassiopeiaAnimationTool {
     }
   }
 
-  public backInRight(element: HTMLElement, focus = true, time = 2000) {
+  public backInRight(element: HTMLElement, focus = true, time = 1010) {
     if (element instanceof HTMLElement) {
+      this.clean(element);
       const animationName = 'backInRight';
       if (focus) element.focus();
 
-      this.byAnimateCSS(element, animationName);
+      this.byAnimateCSS(element, animationName, time);
 
       let onComplete = () => {};
       setTimeout(() => {
@@ -189,12 +184,13 @@ export class KassiopeiaAnimationTool {
     }
   }
 
-  public backInUp(element: HTMLElement, focus = true, time = 2000) {
+  public backInUp(element: HTMLElement, focus = true, time = 1010) {
     if (element instanceof HTMLElement) {
+      this.clean(element);
       const animationName = 'backInUp';
       if (focus) element.focus();
 
-      this.byAnimateCSS(element, animationName);
+      this.byAnimateCSS(element, animationName, time);
 
       let onComplete = () => {};
       setTimeout(() => {
@@ -204,12 +200,13 @@ export class KassiopeiaAnimationTool {
     }
   }
 
-  public zoomOutDown(element: HTMLElement, focus = true, time = 2000) {
+  public zoomOutDown(element: HTMLElement, focus = true, time = 1010) {
     if (element instanceof HTMLElement) {
+      this.clean(element);
       const animationName = 'zoomOutDown';
       if (focus) element.focus();
 
-      this.byAnimateCSS(element, animationName);
+      this.byAnimateCSS(element, animationName, time);
 
       let onComplete = () => {};
       setTimeout(() => {
@@ -219,12 +216,13 @@ export class KassiopeiaAnimationTool {
     }
   }
 
-  public zoomOutUp(element: HTMLElement, focus = true, time = 2000) {
+  public zoomOutUp(element: HTMLElement, focus = true, time = 1010) {
     if (element instanceof HTMLElement) {
+      this.clean(element);
       const animationName = 'zoomOutUp';
       if (focus) element.focus();
 
-      this.byAnimateCSS(element, animationName);
+      this.byAnimateCSS(element, animationName, time);
 
       let onComplete = () => {};
       setTimeout(() => {
@@ -234,12 +232,13 @@ export class KassiopeiaAnimationTool {
     }
   }
 
-  public zoomOutStart(element: HTMLElement, focus = true, time = 2000) {
+  public zoomOutStart(element: HTMLElement, focus = true, time = 1010) {
     if (element instanceof HTMLElement) {
+      this.clean(element);
       const animationName = 'zoomOutLeft';
       if (focus) element.focus();
 
-      this.byAnimateCSS(element, animationName);
+      this.byAnimateCSS(element, animationName, time);
 
       let onComplete = () => {};
       setTimeout(() => {
@@ -249,12 +248,13 @@ export class KassiopeiaAnimationTool {
     }
   }
 
-  public zoomOutEnd(element: HTMLElement, focus = true, time = 2000) {
+  public zoomOutEnd(element: HTMLElement, focus = true, time = 1010) {
     if (element instanceof HTMLElement) {
+      this.clean(element);
       const animationName = 'zoomOutRight';
       if (focus) element.focus();
 
-      this.byAnimateCSS(element, animationName);
+      this.byAnimateCSS(element, animationName, time);
 
       let onComplete = () => {};
       setTimeout(() => {
@@ -264,12 +264,13 @@ export class KassiopeiaAnimationTool {
     }
   }
 
-  public otherAnimationByName(element: HTMLElement, name: string, focus = true, time = 2000) {
+  public otherAnimationByName(element: HTMLElement, name: string, focus = true, time = 1010) {
+    this.clean(element);
     if (element instanceof HTMLElement) {
       if (focus) element.focus();
       const animationName = name.replace('animate__', '');
 
-      this.byAnimateCSS(element, animationName);
+      this.byAnimateCSS(element, animationName, time);
 
       let onComplete = () => {};
       setTimeout(() => {
@@ -280,7 +281,6 @@ export class KassiopeiaAnimationTool {
   }
 
   public destroy() {
-    this.cssHtmlShake.remove();
     this.animateCSS.remove();
   }
 

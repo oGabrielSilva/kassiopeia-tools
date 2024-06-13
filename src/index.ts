@@ -7,12 +7,13 @@ import { KassiopeiaValidationTool } from './modules/validation/KassiopeiaValidat
 import { KassiopeiaAnimationTool } from './modules/animation/KassiopeiaAnimationTool';
 import { Vec3D } from './modules/toaster/Vec3D';
 import { KassiopeiaToasterTool } from './modules/toaster/KassiopeiaToasterTool';
+import { Vec2D } from './modules/toaster/Vec2D';
 
 if (typeof window !== 'object' || typeof document !== 'object') {
   throw new Error('Kassiopeia tools needs to be run in the browser');
 }
 
-const kassiopeiaTools = {
+const KassiopeiaTools = {
   KassiopeiaHtmlTool,
   KassiopeiaPopupTool,
   ImageProcessingTool,
@@ -23,62 +24,31 @@ const kassiopeiaTools = {
   generateHTML,
   generatePopup,
 };
-(window as any).KassiopeiaTools = kassiopeiaTools;
-
-// const anim = KassiopeiaAnimationTool.get();
-
-// document.querySelector<HTMLButtonElement>('#test-shake').onclick = (e) =>
-//   anim.shake(e.target as HTMLElement);
-
-// document.querySelector<HTMLButtonElement>('#test-bounce').onclick = (e) =>
-//   anim.bounce(e.target as HTMLElement);
-
-// document.querySelector<HTMLButtonElement>('#test-flash').onclick = (e) =>
-//   anim.flash(e.target as HTMLElement);
-
-// document.querySelector<HTMLButtonElement>('#test-down').onclick = (e) =>
-//   anim.backInDown((e.target as HTMLElement).parentElement.querySelector('div'));
-
-// document.querySelector<HTMLButtonElement>('#test-top').onclick = (e) =>
-//   anim
-//     .zoomOutUp((e.target as HTMLElement).parentElement.querySelector('div'))
-//     .addEventOnCompletion(() => {
-//       (e.target as HTMLElement).parentElement.querySelector('div').remove();
-//       console.log('Removido');
-//     });
-
-// setTimeout(() => {
-//   anim.destroy();
-
-//   setTimeout(() => {
-//     anim.rebuild();
-//   }, 5000);
-// }, 5000);
+(window as any).KassiopeiaTools = KassiopeiaTools;
 
 const toaster = KassiopeiaToasterTool.get();
 
-setTimeout(() => {
-  toaster.info('Testando');
-}, 1000);
-
-document.body.appendChild(
-  generateHTML({
-    tag: 'div',
-    attributes: {
-      'data-id': Date.now(),
-      hour: new Date().getHours(),
-      class: 'hello world',
-      id: Date.now(),
+document.getElementById('toasteri').onclick = () =>
+  toaster.info('Testando o toaster info').listeners(console.log, console.log);
+document.getElementById('toasters').onclick = () => toaster.success('Testando o toaster success');
+document.getElementById('toasterd').onclick = () => toaster.danger('Testando o toaster danger');
+document.getElementById('toasterw').onclick = () => toaster.warn('Testando o toaster warn');
+document.getElementById('toasterc').onclick = () =>
+  toaster.customToaster('Testando o toaster warn', {
+    background: { color: 'black', padding: Vec2D.of(8, 8), useVectorWithRem: false, opacity: 0.2 },
+    hideOnClick: true,
+    container: {
+      position3D: Vec3D.of(5, 5, 999),
+      outSide: 'top',
+      boundary: { x: 'end', y: 'bottom' },
+      useVectorWithPercentage: true,
     },
-    css: { border: '2px solid black', padding: '2rem' },
-    textContent: 'Hello world!',
-    onClick: () => generatePopup('../dist/bundle.js', 800, 200),
-    children: [{ tag: 'p', textContent: 'Hello world from p' }],
-  })
-);
+    progressBar: { color: 'green', height: 4, time: 5000 },
+    text: { color: 'red' },
+  });
 
 export {
-  kassiopeiaTools as tools,
+  KassiopeiaTools as tools,
   KassiopeiaHtmlTool,
   KassiopeiaPopupTool,
   ImageProcessingTool,

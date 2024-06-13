@@ -24,16 +24,17 @@ export interface IToasterFont {
 export interface IToasterBar {
   color: string;
   height: number;
+  time: number;
 }
 
 export interface IToasterConfig {
   container?: {
-    vec: Vec3D;
+    position3D: Vec3D;
     maxWidth?: string;
     useVectorWithPercentage?: boolean;
     centerOnScreen?: boolean;
     border?: { size: number; color: string };
-    boundary?: { x: 'start' | 'end'; y: 'start' | 'end' };
+    boundary?: { x: 'start' | 'end'; y: 'top' | 'bottom' };
     outSide?: 'top' | 'bottom' | 'start' | 'end';
   };
   background?: {
@@ -66,8 +67,17 @@ export interface IToasterConfig {
 export interface IToasterCustomConfig {
   background: IToasterBG;
   text: IToasterFont;
-  icon: IToasterIcon;
-  progressBar: IToasterBar;
+  icon?: IToasterIcon;
+  progressBar?: IToasterBar;
   hideOnClick: boolean;
   container: IToasterConfig['container'];
+}
+
+export interface IToasterSpecificConfig {
+  background: IToasterBG;
+  text: IToasterFont;
+  icon?: IToasterIcon;
+  bar?: IToasterBar;
+  hideOnClick: boolean;
+  container?: IToasterConfig['container'];
 }
