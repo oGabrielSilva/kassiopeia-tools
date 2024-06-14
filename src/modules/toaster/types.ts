@@ -28,7 +28,7 @@ export interface IToasterBar {
 }
 
 export interface IToasterConfig {
-  container?: {
+  container: {
     position3D: Vec3D;
     maxWidth?: string;
     useVectorWithPercentage?: boolean;
@@ -37,13 +37,13 @@ export interface IToasterConfig {
     boundary?: { x: 'start' | 'end'; y: 'top' | 'bottom' };
     outSide?: 'top' | 'bottom' | 'start' | 'end';
   };
-  background?: {
+  background: {
     info: IToasterBG;
     success: IToasterBG;
     danger: IToasterBG;
     warn: IToasterBG;
   };
-  text?: {
+  text: {
     info: IToasterFont;
     success: IToasterFont;
     danger: IToasterFont;
