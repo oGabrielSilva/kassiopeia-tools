@@ -83,11 +83,11 @@ export class ToasterKassiopeiaTool {
       message,
       {
         background: this.config.background.info,
-        bar: this.config.progressBar.info,
         hideOnClick: this.config.hideOnClick,
-        icon: this.config.icon.info,
         text: this.config.text.info,
         container: this.config.container,
+        ...(this.config.icon ? { icon: this.config.icon.info } : {}),
+        ...(this.config.progressBar ? { bar: this.config.progressBar.info } : {}),
       },
       timeInMilliseconds
     );
@@ -98,11 +98,11 @@ export class ToasterKassiopeiaTool {
       message,
       {
         background: this.config.background.success,
-        bar: this.config.progressBar.success,
         hideOnClick: this.config.hideOnClick,
-        icon: this.config.icon.success,
         text: this.config.text.success,
         container: this.config.container,
+        ...(this.config.icon ? { icon: this.config.icon.success } : {}),
+        ...(this.config.progressBar ? { bar: this.config.progressBar.success } : {}),
       },
       timeInMilliseconds
     );
@@ -113,11 +113,11 @@ export class ToasterKassiopeiaTool {
       message,
       {
         background: this.config.background.danger,
-        bar: this.config.progressBar.danger,
         hideOnClick: this.config.hideOnClick,
-        icon: this.config.icon.danger,
         text: this.config.text.danger,
         container: this.config.container,
+        ...(this.config.icon ? { icon: this.config.icon.danger } : {}),
+        ...(this.config.progressBar ? { bar: this.config.progressBar.danger } : {}),
       },
       timeInMilliseconds
     );
@@ -128,11 +128,11 @@ export class ToasterKassiopeiaTool {
       message,
       {
         background: this.config.background.warn,
-        bar: this.config.progressBar.warn,
         hideOnClick: this.config.hideOnClick,
-        icon: this.config.icon.warn,
         text: this.config.text.warn,
         container: this.config.container,
+        ...(this.config.icon ? { icon: this.config.icon.warn } : {}),
+        ...(this.config.progressBar ? { bar: this.config.progressBar.warn } : {}),
       },
       timeInMilliseconds
     );
@@ -143,11 +143,12 @@ export class ToasterKassiopeiaTool {
       message,
       {
         background: conf.background,
-        bar: conf.progressBar,
+
         hideOnClick: conf.hideOnClick,
-        icon: conf.icon,
         text: conf.text,
         container: conf.container,
+        ...(this.config.icon ? { icon: conf.icon } : {}),
+        ...(this.config.progressBar ? { bar: conf.progressBar } : {}),
       },
       timeInMilliseconds
     );

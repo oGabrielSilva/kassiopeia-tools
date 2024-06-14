@@ -62,57 +62,22 @@ var ToasterKassiopeiaTool = /** @class */ (function () {
     };
     ToasterKassiopeiaTool.prototype.info = function (message, timeInMilliseconds) {
         if (message === void 0) { message = ''; }
-        return this.createToaster(message, {
-            background: this.config.background.info,
-            bar: this.config.progressBar.info,
-            hideOnClick: this.config.hideOnClick,
-            icon: this.config.icon.info,
-            text: this.config.text.info,
-            container: this.config.container,
-        }, timeInMilliseconds);
+        return this.createToaster(message, __assign(__assign({ background: this.config.background.info, hideOnClick: this.config.hideOnClick, text: this.config.text.info, container: this.config.container }, (this.config.icon ? { icon: this.config.icon.info } : {})), (this.config.progressBar ? { bar: this.config.progressBar.info } : {})), timeInMilliseconds);
     };
     ToasterKassiopeiaTool.prototype.success = function (message, timeInMilliseconds) {
         if (message === void 0) { message = ''; }
-        return this.createToaster(message, {
-            background: this.config.background.success,
-            bar: this.config.progressBar.success,
-            hideOnClick: this.config.hideOnClick,
-            icon: this.config.icon.success,
-            text: this.config.text.success,
-            container: this.config.container,
-        }, timeInMilliseconds);
+        return this.createToaster(message, __assign(__assign({ background: this.config.background.success, hideOnClick: this.config.hideOnClick, text: this.config.text.success, container: this.config.container }, (this.config.icon ? { icon: this.config.icon.success } : {})), (this.config.progressBar ? { bar: this.config.progressBar.success } : {})), timeInMilliseconds);
     };
     ToasterKassiopeiaTool.prototype.danger = function (message, timeInMilliseconds) {
         if (message === void 0) { message = ''; }
-        return this.createToaster(message, {
-            background: this.config.background.danger,
-            bar: this.config.progressBar.danger,
-            hideOnClick: this.config.hideOnClick,
-            icon: this.config.icon.danger,
-            text: this.config.text.danger,
-            container: this.config.container,
-        }, timeInMilliseconds);
+        return this.createToaster(message, __assign(__assign({ background: this.config.background.danger, hideOnClick: this.config.hideOnClick, text: this.config.text.danger, container: this.config.container }, (this.config.icon ? { icon: this.config.icon.danger } : {})), (this.config.progressBar ? { bar: this.config.progressBar.danger } : {})), timeInMilliseconds);
     };
     ToasterKassiopeiaTool.prototype.warn = function (message, timeInMilliseconds) {
         if (message === void 0) { message = ''; }
-        return this.createToaster(message, {
-            background: this.config.background.warn,
-            bar: this.config.progressBar.warn,
-            hideOnClick: this.config.hideOnClick,
-            icon: this.config.icon.warn,
-            text: this.config.text.warn,
-            container: this.config.container,
-        }, timeInMilliseconds);
+        return this.createToaster(message, __assign(__assign({ background: this.config.background.warn, hideOnClick: this.config.hideOnClick, text: this.config.text.warn, container: this.config.container }, (this.config.icon ? { icon: this.config.icon.warn } : {})), (this.config.progressBar ? { bar: this.config.progressBar.warn } : {})), timeInMilliseconds);
     };
     ToasterKassiopeiaTool.prototype.customToaster = function (message, conf, timeInMilliseconds) {
-        return this.createToaster(message, {
-            background: conf.background,
-            bar: conf.progressBar,
-            hideOnClick: conf.hideOnClick,
-            icon: conf.icon,
-            text: conf.text,
-            container: conf.container,
-        }, timeInMilliseconds);
+        return this.createToaster(message, __assign(__assign({ background: conf.background, hideOnClick: conf.hideOnClick, text: conf.text, container: conf.container }, (this.config.icon ? { icon: conf.icon } : {})), (this.config.progressBar ? { bar: conf.progressBar } : {})), timeInMilliseconds);
     };
     ToasterKassiopeiaTool.prototype.changeConfig = function (conf) {
         this.config = conf;
