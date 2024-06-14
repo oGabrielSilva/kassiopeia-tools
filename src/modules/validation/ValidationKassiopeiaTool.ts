@@ -35,11 +35,11 @@ export class ValidationKassiopeiaTool {
   }
 
   public normalizeText(text: string) {
-    return String(text).trim();
+    return typeof text === 'string' ? text.trim() : '';
   }
 
   public normalizeURI(uri: string) {
-    return encodeURI(uri);
+    return typeof uri === 'string' ? encodeURI(uri) : '';
   }
 
   public static get() {

@@ -26,10 +26,10 @@ var ValidationKassiopeiaTool = /** @class */ (function () {
         return password.length >= minLength && hasUpperCase && hasLowerCase && hasNumber;
     };
     ValidationKassiopeiaTool.prototype.normalizeText = function (text) {
-        return String(text).trim();
+        return typeof text === 'string' ? text.trim() : '';
     };
     ValidationKassiopeiaTool.prototype.normalizeURI = function (uri) {
-        return encodeURI(uri);
+        return typeof uri === 'string' ? encodeURI(uri) : '';
     };
     ValidationKassiopeiaTool.get = function () {
         if (!(ValidationKassiopeiaTool.instance instanceof ValidationKassiopeiaTool)) {
