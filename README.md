@@ -205,6 +205,61 @@ toaster.customToaster(
 
 _Espero que você seja melhor que eu personalizando isso_
 
+**Achou complicado?**
+Você pode fazer algo assim:
+
+```TypeScript
+// Arquivo -> src/modules/toaster/index.ts(js)
+import { ToasterKassiopeiaTool, Vec2D, Vec3D } from "kassiopeia-tools";
+
+export const toasterTool = ToasterKassiopeiaTool.getConfigured({
+  container: {
+    position3D: Vec3D.of(5, 5, 999),
+    useVectorWithPercentage: true,
+    centerOnScreen: false,
+    boundary: { x: "end", y: "top" },
+    outSide: "end",
+  },
+  background: {
+    info: { color: "#3c48af", useVectorWithRem: true, padding: Vec2D.of(1, 1) },
+    success: {
+      color: "#3dbe41",
+      useVectorWithRem: true,
+      padding: Vec2D.of(1, 1),
+    },
+    danger: {
+      color: "#ca4141",
+      useVectorWithRem: true,
+      padding: Vec2D.of(1, 1),
+    },
+    warn: { color: "#d1c717", useVectorWithRem: true, padding: Vec2D.of(1, 1) },
+  },
+  text: {
+    info: { color: "red", size: 14, font: "JetBrains Mono" },
+    success: { color: "#f9f9f9", size: 14, font: "JetBrains Mono" },
+    danger: { color: "#f5f5f5", size: 14, font: "JetBrains Mono" },
+    warn: { color: "#1c2003", size: 14, font: "JetBrains Mono" },
+  },
+  progressBar: {
+    info: { color: "#ffffff", height: 2, time: 10000 },
+    success: { color: "#f9f9f9", height: 2, time: 10000 },
+    danger: { color: "#f5f5f5", height: 2, time: 10000 },
+    warn: { color: "#1c2003", height: 2, time: 10000 },
+  },
+  hideOnClick: true,
+});
+```
+
+E então usar:
+
+```JavaScript
+import { toasterTool } from "./modules/toaster";
+
+toasterTool.info("Testando");
+```
+
+Você pode ser criativo. Desenvolva o seu código com base no meu :)
+
 ## ImageKassiopeiaProcessingTool
 
 Aqui temos algo um pouco mais poderoso. Veja alguns exemplos:
