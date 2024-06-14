@@ -2,6 +2,15 @@
 
 Um pacote de ferramentas para facilitar sua vida no front-end. Utilizado na construção de minhas plataformas, resolvi exportar como lib.
 
+## Funcionalidades
+
+- Toaster (notificações)
+- Processamento de imagem (redimensionamento de imagem, transformação em webp ou jpeg e DataURL)
+- Validações (email, senha)
+- Animações CSS
+- Geração rápida de HTML
+- Popup
+
 # Documentação
 
 [NPM](https://www.npmjs.com/package/kassiopeia-tools)
@@ -195,6 +204,114 @@ toaster.customToaster(
 ```
 
 _Espero que você seja melhor que eu personalizando isso_
+
+## ImageKassiopeiaProcessingTool
+
+Aqui temos algo um pouco mais poderoso. Veja alguns exemplos:
+
+```JavaScript
+import { ImageKassiopeiaProcessingTool } from "kassiopeia-tools";
+
+const imageTool = ImageKassiopeiaProcessingTool.get();
+```
+
+Você pode transformar um blob em data_url. **Atenção:** esta classe foi programada para manipular imagens!
+
+O segundo parâmetro pode ser `jpeg` ou `webp`. Isso fará com que o blob seja convertido para um dos tipos antes de se tornar data_url
+
+```JavaScript
+const jpeg = await imageTool.blobToDataURL(blob, "webp");
+const webp = await imageTool.blobToDataURL(blob, "jpeg");
+```
+
+**_Detalhe_**: o método não foi programado para reduzir qualidade.
+
+Mas, os seguintes métodos sim:
+
+```TypeScript
+convertFileToJpegBlobWithClipping(file: File, width?: number | undefined, height?: number | undefined, quality?: number | undefined): Promise<Blob>
+```
+
+```TypeScript
+convertFileToJpegBlobWithoutClipping(file: File, quality?: number | undefined): Promise<Blob>
+```
+
+```TypeScript
+convertFileToWebpBlobWithClipping(file: File, width?: number | undefined, height?: number | undefined, quality?: number | undefined): Promise<Blob>
+```
+
+```TypeScript
+convertFileToWebpBlobWithoutClipping(file: File, quality?: number | undefined): Promise<Blob>
+```
+
+## HTMLKassiopeiaTool || generateHTML
+
+Esta ferramenta é usada na construção das outras. Usar a api padrão da web para criar elementos pode ser um pouco cansativo, então acabei desenvolvendo isso. É fraco, mas pode te quebrar um galho!
+
+```JavaScript
+import { generateHTML, HTMLKassiopeiaTool } from "kassiopeia-tools";
+
+generateHTML({
+  tag: "span",
+  css: {
+    overflow: "hidden",
+    position: "fixed",
+    cursor: "default",
+    maxWidth: "70vw",
+    border: "2px solid black",
+  },
+  textContent: "Conteúdo do span em texto",
+  // innerHTML: "<div><p>Pode adicionar html também</p></div>",
+  children: [], // Um Array com elementos para criar filhos para o span. Cada elemento aqui recebe os mesmos atributos
+  attributes: {
+    "data-id": Date.now(),
+    "data-desc": "Adicione qualquer atributo ao seu elemento por aqui",
+    class: "class-here",
+  },
+  onClick: (event, element) => {
+    console.log(event); //Este é o evento de clique
+    console.log(element); // element é o elemento criado aqui, neste caso, span
+  },
+});
+
+//Ou você pode usar a forma completa:
+HTMLKassiopeiaTool.get().generateHTML
+
+```
+
+Você pode usar qualquer uma das formas acima. Ambos os métodos terão o mesmo resultado.
+
+## ValidationKassiopeiaTool
+
+Mais um quebra galho que funciona. Adicione validações rápidas da seguinte maneira:
+
+```JavaScript
+import { ValidationKassiopeiaTool } from "kassiopeia-tools";
+
+const validation = ValidationKassiopeiaTool.get();
+
+const isEmailValid = validation.isEmailValid(email);
+const isPasswordValid = validation.isPasswordValid(pass); //Verifica se tem pelo menos 8 caracteres, ao menos um número, e pelo menos uma letra minúsculas e maiúsculas
+const isURLValid = validation.isURLValid(url);
+
+//Normalizações
+const text = validation.normalizeText(txt); //Usará trim na string se ela existir ou retornará uma nova string vazia;
+const uri = validation.normalizeURI(base); // "/t /0]" -> "/t%20/0%5D"
+
+```
+
+##
+
+Por último e não menos importante, temos o `popup`. Esta ferramenta cria telas para urls específicas.
+
+```JavaScript
+import { PopupKassiopeiaTool, generatePopup } from "kassiopeia-tools";
+
+const window = generatePopup('https://github.com/oGabrielSilva/kassiopeia-tools', 420, 580)
+
+//OU
+PopupKassiopeiaTool.get().generate
+```
 
 ## Licença
 
