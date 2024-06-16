@@ -144,7 +144,7 @@ export class Toaster {
       tag: 'p',
       css: {
         ...(typeof font.font === 'string' ? { fontFamily: font.font } : {}),
-        ...(typeof font.size === 'number' ? { fontSize: font.size.toString() } : {}),
+        ...(typeof font.size === 'number' ? { fontSize: font.size.toString() + 'px' } : {}),
         ...(typeof font.weight === 'string' ? { fontWeight: font.weight } : {}),
         ...(font.isItalic ? { fontStyle: 'italic' } : {}),
         color: font.color,
