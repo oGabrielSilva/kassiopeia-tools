@@ -120,7 +120,7 @@ var Toaster = /** @class */ (function () {
         }
         this.text = (0, html_1.generateHTML)({
             tag: 'p',
-            css: __assign(__assign(__assign(__assign(__assign({}, (typeof font.font === 'string' ? { fontFamily: font.font } : {})), (typeof font.size === 'number' ? { fontSize: font.size.toString() } : {})), (typeof font.weight === 'string' ? { fontWeight: font.weight } : {})), (font.isItalic ? { fontStyle: 'italic' } : {})), { color: font.color }),
+            css: __assign(__assign(__assign(__assign(__assign({}, (typeof font.font === 'string' ? { fontFamily: font.font } : {})), (typeof font.size === 'number' ? { fontSize: font.size.toString() + 'px' } : {})), (typeof font.weight === 'string' ? { fontWeight: font.weight } : {})), (font.isItalic ? { fontStyle: 'italic' } : {})), { color: font.color }),
             textContent: this.message,
         });
         this.background.appendChild(this.text);
