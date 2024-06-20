@@ -72,6 +72,8 @@ export class ScreenLockerKassiopeiaTool {
 
   public configureTo(config: IScreenLockerConfig) {
     this.config = config;
+
+    return this;
   }
 
   public isLocked() {

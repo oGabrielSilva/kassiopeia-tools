@@ -18,7 +18,7 @@ export declare class ScreenLockerKassiopeiaTool {
     private configureBars;
     private configureAnimationCSS;
     reset(): void;
-    configureTo(config: IScreenLockerConfig): void;
+    configureTo(config: IScreenLockerConfig): this;
     isLocked(): boolean;
     lock(): void;
     unlock(): void;

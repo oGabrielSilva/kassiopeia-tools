@@ -53,6 +53,7 @@ var ScreenLockerKassiopeiaTool = /** @class */ (function () {
     };
     ScreenLockerKassiopeiaTool.prototype.configureTo = function (config) {
         this.config = config;
+        return this;
     };
     ScreenLockerKassiopeiaTool.prototype.isLocked = function () {
         return this.locker !== null && document.body.contains(this.locker);
