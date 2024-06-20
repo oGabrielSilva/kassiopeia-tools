@@ -31,12 +31,10 @@ export class AnimationKassiopeiaTool {
   }
 
   public clean(element: HTMLElement) {
-    if (element.classList.contains(this.principalClassName)) {
-      element.classList.remove(this.principalClassName);
-      element.classList.forEach((c) => {
-        if (c.startsWith(this.animateTemplate)) element.classList.remove(c);
-      });
-    }
+    element.classList.remove(this.principalClassName);
+    element.classList.forEach((c) => {
+      if (c.startsWith(this.animateTemplate)) element.classList.remove(c);
+    });
   }
 
   public bounce(element: HTMLElement, focus = true, time = 1010) {

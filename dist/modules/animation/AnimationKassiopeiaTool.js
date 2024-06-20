@@ -30,13 +30,11 @@ var AnimationKassiopeiaTool = /** @class */ (function () {
     };
     AnimationKassiopeiaTool.prototype.clean = function (element) {
         var _this = this;
-        if (element.classList.contains(this.principalClassName)) {
-            element.classList.remove(this.principalClassName);
-            element.classList.forEach(function (c) {
-                if (c.startsWith(_this.animateTemplate))
-                    element.classList.remove(c);
-            });
-        }
+        element.classList.remove(this.principalClassName);
+        element.classList.forEach(function (c) {
+            if (c.startsWith(_this.animateTemplate))
+                element.classList.remove(c);
+        });
     };
     AnimationKassiopeiaTool.prototype.bounce = function (element, focus, time) {
         if (focus === void 0) { focus = true; }
