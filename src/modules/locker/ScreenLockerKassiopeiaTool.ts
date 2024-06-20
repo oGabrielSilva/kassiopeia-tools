@@ -100,6 +100,8 @@ export class ScreenLockerKassiopeiaTool {
     if (!ScreenLockerKassiopeiaTool.instance)
       ScreenLockerKassiopeiaTool.instance = new ScreenLockerKassiopeiaTool();
 
+    ScreenLockerKassiopeiaTool.instance.reset();
+
     return ScreenLockerKassiopeiaTool.instance;
   }
 

@@ -72,6 +72,7 @@ var ScreenLockerKassiopeiaTool = /** @class */ (function () {
     ScreenLockerKassiopeiaTool.get = function () {
         if (!ScreenLockerKassiopeiaTool.instance)
             ScreenLockerKassiopeiaTool.instance = new ScreenLockerKassiopeiaTool();
+        ScreenLockerKassiopeiaTool.instance.reset();
         return ScreenLockerKassiopeiaTool.instance;
     };
     ScreenLockerKassiopeiaTool.getDefaultConfig = function () {
