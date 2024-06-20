@@ -20,8 +20,10 @@ export class AnimationKassiopeiaTool {
 
   protected byAnimateCSS(element: HTMLElement, animationName: string, time: number) {
     element.style.animationDuration = time + 'ms';
-    element.classList.add(this.principalClassName);
-    element.classList.add(`${this.animateTemplate}${animationName}`);
+    setTimeout(() => {
+      element.classList.add(this.principalClassName);
+      element.classList.add(`${this.animateTemplate}${animationName}`);
+    }, 1);
   }
 
   protected cleanAnimateCSS(element: HTMLElement, animationName: string, event?: () => void) {

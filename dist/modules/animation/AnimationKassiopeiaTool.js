@@ -18,9 +18,12 @@ var AnimationKassiopeiaTool = /** @class */ (function () {
         document.head.appendChild(this.animateCSS);
     };
     AnimationKassiopeiaTool.prototype.byAnimateCSS = function (element, animationName, time) {
+        var _this = this;
         element.style.animationDuration = time + 'ms';
-        element.classList.add(this.principalClassName);
-        element.classList.add("".concat(this.animateTemplate).concat(animationName));
+        setTimeout(function () {
+            element.classList.add(_this.principalClassName);
+            element.classList.add("".concat(_this.animateTemplate).concat(animationName));
+        }, 1);
     };
     AnimationKassiopeiaTool.prototype.cleanAnimateCSS = function (element, animationName, event) {
         if (event && typeof event === 'function')
