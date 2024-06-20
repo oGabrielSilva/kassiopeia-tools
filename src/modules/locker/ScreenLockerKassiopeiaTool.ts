@@ -1,20 +1,20 @@
 import { generateHTML } from '../html';
 
-interface IScreenLockerBarConfig {
+export interface IScreenLockerBarConfig {
   width: string | number;
   color: string;
   speed: number;
   height: string | number;
 }
 
-interface IScreenLockerConfig {
+export interface IScreenLockerConfig {
   opacity: number;
   background: string;
   bars: IScreenLockerBarConfig[];
 }
 
-export class ScreenLocker {
-  private static instance: ScreenLocker;
+export class ScreenLockerKassiopeiaTool {
+  private static instance: ScreenLockerKassiopeiaTool;
 
   private config: IScreenLockerConfig;
 
@@ -67,7 +67,7 @@ export class ScreenLocker {
   }
 
   public reset() {
-    this.config = ScreenLocker.getDefaultConfig();
+    this.config = ScreenLockerKassiopeiaTool.getDefaultConfig();
   }
 
   public configureTo(config: IScreenLockerConfig) {
@@ -97,9 +97,10 @@ export class ScreenLocker {
   }
 
   public static get() {
-    if (!ScreenLocker.instance) ScreenLocker.instance = new ScreenLocker();
+    if (!ScreenLockerKassiopeiaTool.instance)
+      ScreenLockerKassiopeiaTool.instance = new ScreenLockerKassiopeiaTool();
 
-    return ScreenLocker.instance;
+    return ScreenLockerKassiopeiaTool.instance;
   }
 
   public static getDefaultConfig(): IScreenLockerConfig {

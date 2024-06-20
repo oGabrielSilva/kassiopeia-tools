@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.generateHTML = exports.generatePopup = exports.Vec3D = exports.Vec2D = exports.ToasterKassiopeiaTool = exports.ValidationKassiopeiaTool = exports.PopupKassiopeiaTool = exports.ImageKassiopeiaProcessingTool = exports.HTMLKassiopeiaTool = exports.AnimationKassiopeiaTool = exports.KassiopeiaTools = void 0;
+exports.generateHTML = exports.generatePopup = exports.ScreenLockerKassiopeiaTool = exports.Vec3D = exports.Vec2D = exports.ToasterKassiopeiaTool = exports.ValidationKassiopeiaTool = exports.PopupKassiopeiaTool = exports.ImageKassiopeiaProcessingTool = exports.HTMLKassiopeiaTool = exports.AnimationKassiopeiaTool = exports.KassiopeiaTools = void 0;
 //animation
 var AnimationKassiopeiaTool_1 = require("./modules/animation/AnimationKassiopeiaTool");
 Object.defineProperty(exports, "AnimationKassiopeiaTool", { enumerable: true, get: function () { return AnimationKassiopeiaTool_1.AnimationKassiopeiaTool; } });
@@ -27,6 +27,9 @@ Object.defineProperty(exports, "Vec3D", { enumerable: true, get: function () { r
 //validation
 var ValidationKassiopeiaTool_1 = require("./modules/validation/ValidationKassiopeiaTool");
 Object.defineProperty(exports, "ValidationKassiopeiaTool", { enumerable: true, get: function () { return ValidationKassiopeiaTool_1.ValidationKassiopeiaTool; } });
+//locker
+var ScreenLockerKassiopeiaTool_1 = require("./modules/locker/ScreenLockerKassiopeiaTool");
+Object.defineProperty(exports, "ScreenLockerKassiopeiaTool", { enumerable: true, get: function () { return ScreenLockerKassiopeiaTool_1.ScreenLockerKassiopeiaTool; } });
 exports.KassiopeiaTools = {
     AnimationKassiopeiaTool: AnimationKassiopeiaTool_1.AnimationKassiopeiaTool,
     HTMLKassiopeiaTool: HTMLKassiopeiaTool_1.HTMLKassiopeiaTool,
@@ -36,6 +39,7 @@ exports.KassiopeiaTools = {
     ToasterKassiopeiaTool: ToasterKassiopeiaTool_1.ToasterKassiopeiaTool,
     Vec2D: Vec2D_1.Vec2D,
     Vec3D: Vec3D_1.Vec3D,
+    ScreenLockerKassiopeiaTool: ScreenLockerKassiopeiaTool_1.ScreenLockerKassiopeiaTool,
     generatePopup: popup_1.generatePopup,
     generateHTML: html_1.generateHTML,
 };

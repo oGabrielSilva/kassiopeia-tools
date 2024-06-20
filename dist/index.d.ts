@@ -10,6 +10,8 @@ import type { IToasterBG, IToasterBar, IToasterConfig, IToasterCustomConfig, ITo
 import { Vec2D } from './modules/toaster/Vec2D';
 import { Vec3D } from './modules/toaster/Vec3D';
 import { ValidationKassiopeiaTool } from './modules/validation/ValidationKassiopeiaTool';
+import { ScreenLockerKassiopeiaTool } from './modules/locker/ScreenLockerKassiopeiaTool';
+import type { IScreenLockerBarConfig, IScreenLockerConfig } from './modules/locker/ScreenLockerKassiopeiaTool';
 export declare const KassiopeiaTools: {
     AnimationKassiopeiaTool: typeof AnimationKassiopeiaTool;
     HTMLKassiopeiaTool: typeof HTMLKassiopeiaTool;
@@ -19,9 +21,10 @@ export declare const KassiopeiaTools: {
     ToasterKassiopeiaTool: typeof ToasterKassiopeiaTool;
     Vec2D: typeof Vec2D;
     Vec3D: typeof Vec3D;
+    ScreenLockerKassiopeiaTool: typeof ScreenLockerKassiopeiaTool;
     generatePopup: typeof generatePopup;
     generateHTML: typeof generateHTML;
 };
-export { AnimationKassiopeiaTool, HTMLKassiopeiaTool, ImageKassiopeiaProcessingTool, PopupKassiopeiaTool, ValidationKassiopeiaTool, ToasterKassiopeiaTool, Vec2D, Vec3D, generatePopup, generateHTML, };
-export type { IHTMLGenerator, IToasterBG, IToasterBar, IToasterConfig, IToasterCustomConfig, IToasterFont, IToasterIcon, IToasterSpecificConfig, };
+export { AnimationKassiopeiaTool, HTMLKassiopeiaTool, ImageKassiopeiaProcessingTool, PopupKassiopeiaTool, ValidationKassiopeiaTool, ToasterKassiopeiaTool, Vec2D, Vec3D, ScreenLockerKassiopeiaTool, generatePopup, generateHTML, };
+export type { IHTMLGenerator, IToasterBG, IToasterBar, IToasterConfig, IToasterCustomConfig, IToasterFont, IToasterIcon, IToasterSpecificConfig, IScreenLockerConfig, IScreenLockerBarConfig, };
 export default KassiopeiaTools;

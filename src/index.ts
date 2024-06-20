@@ -30,6 +30,13 @@ import { Vec3D } from './modules/toaster/Vec3D';
 //validation
 import { ValidationKassiopeiaTool } from './modules/validation/ValidationKassiopeiaTool';
 
+//locker
+import { ScreenLockerKassiopeiaTool } from './modules/locker/ScreenLockerKassiopeiaTool';
+import type {
+  IScreenLockerBarConfig,
+  IScreenLockerConfig,
+} from './modules/locker/ScreenLockerKassiopeiaTool';
+
 export const KassiopeiaTools = {
   AnimationKassiopeiaTool,
   HTMLKassiopeiaTool,
@@ -39,6 +46,7 @@ export const KassiopeiaTools = {
   ToasterKassiopeiaTool,
   Vec2D,
   Vec3D,
+  ScreenLockerKassiopeiaTool,
 
   generatePopup,
   generateHTML,
@@ -53,6 +61,7 @@ export {
   ToasterKassiopeiaTool,
   Vec2D,
   Vec3D,
+  ScreenLockerKassiopeiaTool,
   generatePopup,
   generateHTML,
 };
@@ -66,6 +75,8 @@ export type {
   IToasterFont,
   IToasterIcon,
   IToasterSpecificConfig,
+  IScreenLockerConfig,
+  IScreenLockerBarConfig,
 };
 
 export default KassiopeiaTools;
