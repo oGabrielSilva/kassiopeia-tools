@@ -9,7 +9,11 @@ var ScreenLockerKassiopeiaTool = /** @class */ (function () {
     ScreenLockerKassiopeiaTool.prototype.configureLocker = function () {
         this.locker = (0, html_1.generateHTML)({
             tag: 'div',
-            attributes: { 'data-nano': Date.now(), 'data-activated': 'true' },
+            attributes: {
+                'data-nano': Date.now(),
+                'data-activated': 'true',
+                'data-screen-locker-kassiopeia-tool': '',
+            },
             css: {
                 opacity: this.config.opacity,
                 background: this.config.background,

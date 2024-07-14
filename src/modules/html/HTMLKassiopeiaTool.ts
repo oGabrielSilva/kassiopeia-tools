@@ -17,6 +17,8 @@ export class HTMLKassiopeiaTool {
     const { tag, attributes, css, onClick, textContent, children, innerHTML } = options;
     const element = document.createElement(tag);
 
+    element.dataset.byHtmlKassiopeiaTool = '';
+
     if (textContent) {
       element.textContent = typeof textContent === 'string' ? textContent : String(textContent);
     }

@@ -8,6 +8,7 @@ var HTMLKassiopeiaTool = /** @class */ (function () {
         var _this = this;
         var tag = options.tag, attributes = options.attributes, css = options.css, onClick = options.onClick, textContent = options.textContent, children = options.children, innerHTML = options.innerHTML;
         var element = document.createElement(tag);
+        element.dataset.byHtmlKassiopeiaTool = '';
         if (textContent) {
             element.textContent = typeof textContent === 'string' ? textContent : String(textContent);
         }

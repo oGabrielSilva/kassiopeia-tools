@@ -50,6 +50,7 @@ var Toaster = /** @class */ (function () {
             len += 1;
         this.container = (0, html_1.generateHTML)({
             tag: 'div',
+            attributes: { 'data-toaster-kassiopeia-tool': '' },
             css: __assign(__assign({ overflow: 'hidden', zIndex: position3D.z, position: 'fixed', cursor: 'default', maxWidth: typeof maxWidth === 'string' ? maxWidth : this.defaultMaxWidth }, (typeof border === 'object'
                 ? {
                     border: "".concat(border.size, "px solid ").concat(border.color),

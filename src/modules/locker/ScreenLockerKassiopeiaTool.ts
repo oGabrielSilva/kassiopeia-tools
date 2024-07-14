@@ -25,7 +25,11 @@ export class ScreenLockerKassiopeiaTool {
   private configureLocker() {
     this.locker = generateHTML({
       tag: 'div',
-      attributes: { 'data-nano': Date.now(), 'data-activated': 'true' },
+      attributes: {
+        'data-nano': Date.now(),
+        'data-activated': 'true',
+        'data-screen-locker-kassiopeia-tool': '',
+      },
       css: {
         opacity: this.config.opacity,
         background: this.config.background,
@@ -73,7 +77,7 @@ export class ScreenLockerKassiopeiaTool {
   public configureTo(config: IScreenLockerConfig) {
     this.config = config;
 
-    return this;
+    return this as ScreenLockerKassiopeiaTool;
   }
 
   public isLocked() {

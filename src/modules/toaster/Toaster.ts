@@ -46,6 +46,7 @@ export class Toaster {
 
     this.container = generateHTML({
       tag: 'div',
+      attributes: { 'data-toaster-kassiopeia-tool': '' },
       css: {
         overflow: 'hidden',
         zIndex: position3D.z,
