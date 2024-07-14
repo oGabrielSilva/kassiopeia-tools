@@ -39,6 +39,7 @@ export interface IToasterConfig {
     boundary?: { x: 'start' | 'end'; y: 'top' | 'bottom' };
     outSide?: 'top' | 'bottom' | 'start' | 'end';
     cursor?: Property.Cursor;
+    borderRadius?: Property.BorderRadius;
   };
   background: {
     info: IToasterBG;

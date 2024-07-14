@@ -38,6 +38,7 @@ export class Toaster {
       boundary,
       centerOnScreen,
       cursor,
+      borderRadius,
     } = this.config.container;
 
     let len = ToasterKassiopeiaTool.toasters.filter(
@@ -60,6 +61,7 @@ export class Toaster {
         position: 'fixed',
         cursor: cursor ? cursor : 'default',
         maxWidth: typeof maxWidth === 'string' ? maxWidth : this.defaultMaxWidth,
+        ...(borderRadius ? { borderRadius } : {}),
         ...(typeof border === 'object'
           ? {
               border: `${border.size}px solid ${border.color}`,
