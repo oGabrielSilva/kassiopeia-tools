@@ -1,3 +1,5 @@
+import type { Property } from 'csstype';
+
 import type { Vec2D } from './Vec2D';
 import type { Vec3D } from './Vec3D';
 
@@ -36,6 +38,7 @@ export interface IToasterConfig {
     border?: { size: number; color: string };
     boundary?: { x: 'start' | 'end'; y: 'top' | 'bottom' };
     outSide?: 'top' | 'bottom' | 'start' | 'end';
+    cursor?: Property.Cursor;
   };
   background: {
     info: IToasterBG;
