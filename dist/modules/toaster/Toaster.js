@@ -38,7 +38,7 @@ var Toaster = /** @class */ (function () {
     }
     Toaster.prototype.configureYourself = function () {
         var _this = this;
-        var _a = this.config.container, useVectorWithPercentage = _a.useVectorWithPercentage, position3D = _a.position3D, border = _a.border, maxWidth = _a.maxWidth, boundary = _a.boundary, centerOnScreen = _a.centerOnScreen;
+        var _a = this.config.container, useVectorWithPercentage = _a.useVectorWithPercentage, position3D = _a.position3D, border = _a.border, maxWidth = _a.maxWidth, boundary = _a.boundary, centerOnScreen = _a.centerOnScreen, cursor = _a.cursor;
         var len = ToasterKassiopeiaTool_1.ToasterKassiopeiaTool.toasters.filter(function (toaster) {
             return toaster &&
                 toaster.isOnScreen &&
@@ -51,7 +51,7 @@ var Toaster = /** @class */ (function () {
         this.container = (0, html_1.generateHTML)({
             tag: 'div',
             attributes: { 'data-toaster-kassiopeia-tool': '' },
-            css: __assign(__assign({ overflow: 'hidden', zIndex: position3D.z, position: 'fixed', cursor: 'default', maxWidth: typeof maxWidth === 'string' ? maxWidth : this.defaultMaxWidth }, (typeof border === 'object'
+            css: __assign(__assign({ overflow: 'hidden', zIndex: position3D.z, position: 'fixed', cursor: cursor ? cursor : 'default', maxWidth: typeof maxWidth === 'string' ? maxWidth : this.defaultMaxWidth }, (typeof border === 'object'
                 ? {
                     border: "".concat(border.size, "px solid ").concat(border.color),
                 }

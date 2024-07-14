@@ -30,8 +30,15 @@ export class Toaster {
   ) {}
 
   protected configureYourself() {
-    const { useVectorWithPercentage, position3D, border, maxWidth, boundary, centerOnScreen } =
-      this.config.container;
+    const {
+      useVectorWithPercentage,
+      position3D,
+      border,
+      maxWidth,
+      boundary,
+      centerOnScreen,
+      cursor,
+    } = this.config.container;
 
     let len = ToasterKassiopeiaTool.toasters.filter(
       (toaster) =>
@@ -51,7 +58,7 @@ export class Toaster {
         overflow: 'hidden',
         zIndex: position3D.z,
         position: 'fixed',
-        cursor: 'default',
+        cursor: cursor ? cursor : 'default',
         maxWidth: typeof maxWidth === 'string' ? maxWidth : this.defaultMaxWidth,
         ...(typeof border === 'object'
           ? {
