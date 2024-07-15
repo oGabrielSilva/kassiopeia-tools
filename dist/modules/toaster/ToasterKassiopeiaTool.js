@@ -130,6 +130,13 @@ var ToasterKassiopeiaTool = /** @class */ (function () {
         instance.config = config;
         return instance;
     };
+    Object.defineProperty(ToasterKassiopeiaTool, "fast", {
+        get: function () {
+            return ToasterKassiopeiaTool.get();
+        },
+        enumerable: false,
+        configurable: true
+    });
     ToasterKassiopeiaTool.instance = null;
     ToasterKassiopeiaTool.toasters = [];
     return ToasterKassiopeiaTool;

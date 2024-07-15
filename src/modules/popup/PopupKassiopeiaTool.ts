@@ -17,4 +17,8 @@ export class PopupKassiopeiaTool {
     }
     return PopupKassiopeiaTool.instance;
   }
+
+  public static get fast() {
+    return PopupKassiopeiaTool.get();
+  }
 }

@@ -15,6 +15,13 @@ var PopupKassiopeiaTool = /** @class */ (function () {
         }
         return PopupKassiopeiaTool.instance;
     };
+    Object.defineProperty(PopupKassiopeiaTool, "fast", {
+        get: function () {
+            return PopupKassiopeiaTool.get();
+        },
+        enumerable: false,
+        configurable: true
+    });
     PopupKassiopeiaTool.instance = null;
     return PopupKassiopeiaTool;
 }());

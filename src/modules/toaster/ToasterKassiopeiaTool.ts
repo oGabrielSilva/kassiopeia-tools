@@ -211,4 +211,8 @@ export class ToasterKassiopeiaTool {
     instance.config = config;
     return instance;
   }
+
+  public static get fast() {
+    return ToasterKassiopeiaTool.get();
+  }
 }

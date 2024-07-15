@@ -41,6 +41,13 @@ var HTMLKassiopeiaTool = /** @class */ (function () {
         }
         return HTMLKassiopeiaTool.instance;
     };
+    Object.defineProperty(HTMLKassiopeiaTool, "fast", {
+        get: function () {
+            return HTMLKassiopeiaTool.get();
+        },
+        enumerable: false,
+        configurable: true
+    });
     HTMLKassiopeiaTool.instance = null;
     return HTMLKassiopeiaTool;
 }());

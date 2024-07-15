@@ -9,4 +9,5 @@ export declare class ValidationKassiopeiaTool {
     normalizeText(text: string): string;
     normalizeURI(uri: string): string;
     static get(): ValidationKassiopeiaTool;
+    static get fast(): ValidationKassiopeiaTool;
 }

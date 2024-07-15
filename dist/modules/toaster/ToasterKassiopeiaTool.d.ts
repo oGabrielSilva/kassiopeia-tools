@@ -36,4 +36,5 @@ export declare class ToasterKassiopeiaTool {
     static defaultConfiguration(): IToasterConfig;
     static get(): ToasterKassiopeiaTool;
     static getConfigured(config: IToasterConfig): ToasterKassiopeiaTool;
+    static get fast(): ToasterKassiopeiaTool;
 }

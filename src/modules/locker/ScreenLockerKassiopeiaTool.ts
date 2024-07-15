@@ -121,4 +121,8 @@ export class ScreenLockerKassiopeiaTool {
       ],
     };
   }
+
+  public static get fast() {
+    return ScreenLockerKassiopeiaTool.get();
+  }
 }

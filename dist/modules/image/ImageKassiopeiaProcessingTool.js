@@ -302,6 +302,13 @@ var ImageKassiopeiaProcessingTool = /** @class */ (function () {
         }
         return ImageKassiopeiaProcessingTool.instance;
     };
+    Object.defineProperty(ImageKassiopeiaProcessingTool, "fast", {
+        get: function () {
+            return ImageKassiopeiaProcessingTool.get();
+        },
+        enumerable: false,
+        configurable: true
+    });
     return ImageKassiopeiaProcessingTool;
 }());
 exports.ImageKassiopeiaProcessingTool = ImageKassiopeiaProcessingTool;

@@ -48,4 +48,8 @@ export class ValidationKassiopeiaTool {
     }
     return ValidationKassiopeiaTool.instance;
   }
+
+  public static get fast() {
+    return ValidationKassiopeiaTool.get();
+  }
 }

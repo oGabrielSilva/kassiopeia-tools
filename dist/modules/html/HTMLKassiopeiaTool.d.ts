@@ -12,4 +12,5 @@ export declare class HTMLKassiopeiaTool {
     protected static instance: HTMLKassiopeiaTool;
     generateHTML<T = HTMLElement>(options: IHTMLGenerator): T;
     static get(): HTMLKassiopeiaTool;
+    static get fast(): HTMLKassiopeiaTool;
 }

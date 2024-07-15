@@ -37,6 +37,13 @@ var ValidationKassiopeiaTool = /** @class */ (function () {
         }
         return ValidationKassiopeiaTool.instance;
     };
+    Object.defineProperty(ValidationKassiopeiaTool, "fast", {
+        get: function () {
+            return ValidationKassiopeiaTool.get();
+        },
+        enumerable: false,
+        configurable: true
+    });
     ValidationKassiopeiaTool.instance = null;
     ValidationKassiopeiaTool.emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     ValidationKassiopeiaTool.URLRegex = /(https:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/;

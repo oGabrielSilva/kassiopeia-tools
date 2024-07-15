@@ -90,6 +90,13 @@ var ScreenLockerKassiopeiaTool = /** @class */ (function () {
             ],
         };
     };
+    Object.defineProperty(ScreenLockerKassiopeiaTool, "fast", {
+        get: function () {
+            return ScreenLockerKassiopeiaTool.get();
+        },
+        enumerable: false,
+        configurable: true
+    });
     return ScreenLockerKassiopeiaTool;
 }());
 exports.ScreenLockerKassiopeiaTool = ScreenLockerKassiopeiaTool;

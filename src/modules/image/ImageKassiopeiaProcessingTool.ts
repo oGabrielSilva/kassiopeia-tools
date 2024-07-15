@@ -242,4 +242,8 @@ export class ImageKassiopeiaProcessingTool {
     }
     return ImageKassiopeiaProcessingTool.instance;
   }
+
+  public static get fast() {
+    return ImageKassiopeiaProcessingTool.get();
+  }
 }

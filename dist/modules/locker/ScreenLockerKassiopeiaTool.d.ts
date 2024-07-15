@@ -24,4 +24,5 @@ export declare class ScreenLockerKassiopeiaTool {
     unlock(): void;
     static get(): ScreenLockerKassiopeiaTool;
     static getDefaultConfig(): IScreenLockerConfig;
+    static get fast(): ScreenLockerKassiopeiaTool;
 }

@@ -9,4 +9,5 @@ export declare class ImageKassiopeiaProcessingTool {
     protected resizeHeight(img: HTMLImageElement, width: number, height: number): Promise<HTMLImageElement>;
     protected resizeWidth(img: HTMLImageElement, width: number, height: number): Promise<HTMLImageElement>;
     static get(): ImageKassiopeiaProcessingTool;
+    static get fast(): ImageKassiopeiaProcessingTool;
 }

@@ -57,4 +57,8 @@ export class HTMLKassiopeiaTool {
     }
     return HTMLKassiopeiaTool.instance;
   }
+
+  public static get fast() {
+    return HTMLKassiopeiaTool.get();
+  }
 }
