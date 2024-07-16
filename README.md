@@ -54,7 +54,7 @@ Os métodos de animações recebem os seguintes parâmetros:
 
 - `element`: o elemento HTML a qual receberá a animação
 - `focus`: se você não informar um valor, _focus_ por padrão é _true_. Ele indica se o _element_ receberá focus através do método _element.focus()_
-- `time`: duração da animação em milissegundos. Por padrão é _1010_
+- `time`: duração da animação em milissegundos. Por padrão é _810_
 
 Além dos métodos de animações, exitem:
 

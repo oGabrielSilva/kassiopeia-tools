@@ -33,6 +33,13 @@ export class AnimationKassiopeiaTool {
     element.classList.remove(`${this.animateTemplate}${animationName}`);
   }
 
+  protected causeFocus(element: HTMLElement) {
+    element.focus();
+    if (!(element instanceof HTMLInputElement)) {
+      element.querySelector('input')?.focus();
+    }
+  }
+
   public clean(element: HTMLElement) {
     element.classList.remove(this.principalClassName);
     element.classList.forEach((c) => {
@@ -40,11 +47,11 @@ export class AnimationKassiopeiaTool {
     });
   }
 
-  public bounce(element: HTMLElement, focus = true, time = 1010) {
+  public bounce(element: HTMLElement, focus = true, time = 810) {
     if (element instanceof HTMLElement) {
       this.clean(element);
       const animationName = 'bounce';
-      if (focus) element.focus();
+      if (focus) this.causeFocus(element);
 
       this.byAnimateCSS(element, animationName, time);
 
@@ -56,11 +63,11 @@ export class AnimationKassiopeiaTool {
     }
   }
 
-  public bounceInDown(element: HTMLElement, focus = true, time = 1010) {
+  public bounceInDown(element: HTMLElement, focus = true, time = 810) {
     if (element instanceof HTMLElement) {
       this.clean(element);
       const animationName = 'bounceInDown';
-      if (focus) element.focus();
+      if (focus) this.causeFocus(element);
 
       this.byAnimateCSS(element, animationName, time);
 
@@ -72,11 +79,11 @@ export class AnimationKassiopeiaTool {
     }
   }
 
-  public flash(element: HTMLElement, focus = true, time = 1010) {
+  public flash(element: HTMLElement, focus = true, time = 810) {
     if (element instanceof HTMLElement) {
       this.clean(element);
       const animationName = 'flash';
-      if (focus) element.focus();
+      if (focus) this.causeFocus(element);
 
       this.byAnimateCSS(element, animationName, time);
 
@@ -88,11 +95,11 @@ export class AnimationKassiopeiaTool {
     }
   }
 
-  public shakeX(element: HTMLElement, focus = true, time = 1010) {
+  public shakeX(element: HTMLElement, focus = true, time = 810) {
     if (element instanceof HTMLElement) {
       this.clean(element);
       const animationName = 'shakeX';
-      if (focus) element.focus();
+      if (focus) this.causeFocus(element);
 
       this.byAnimateCSS(element, animationName, time);
 
@@ -104,11 +111,11 @@ export class AnimationKassiopeiaTool {
     }
   }
 
-  public shakeY(element: HTMLElement, focus = true, time = 1010) {
+  public shakeY(element: HTMLElement, focus = true, time = 810) {
     if (element instanceof HTMLElement) {
       this.clean(element);
       const animationName = 'shakeY';
-      if (focus) element.focus();
+      if (focus) this.causeFocus(element);
 
       this.byAnimateCSS(element, animationName, time);
 
@@ -120,11 +127,11 @@ export class AnimationKassiopeiaTool {
     }
   }
 
-  public heartBeat(element: HTMLElement, focus = true, time = 1010) {
+  public heartBeat(element: HTMLElement, focus = true, time = 810) {
     if (element instanceof HTMLElement) {
       this.clean(element);
       const animationName = 'heartBeat';
-      if (focus) element.focus();
+      if (focus) this.causeFocus(element);
 
       this.byAnimateCSS(element, animationName, time);
 
@@ -136,11 +143,11 @@ export class AnimationKassiopeiaTool {
     }
   }
 
-  public backInDown(element: HTMLElement, focus = true, time = 1010) {
+  public backInDown(element: HTMLElement, focus = true, time = 810) {
     if (element instanceof HTMLElement) {
       this.clean(element);
       const animationName = 'backInDown';
-      if (focus) element.focus();
+      if (focus) this.causeFocus(element);
 
       this.byAnimateCSS(element, animationName, time);
 
@@ -152,11 +159,11 @@ export class AnimationKassiopeiaTool {
     }
   }
 
-  public backInLeft(element: HTMLElement, focus = true, time = 1010) {
+  public backInLeft(element: HTMLElement, focus = true, time = 810) {
     if (element instanceof HTMLElement) {
       this.clean(element);
       const animationName = 'backInLeft';
-      if (focus) element.focus();
+      if (focus) this.causeFocus(element);
 
       this.byAnimateCSS(element, animationName, time);
 
@@ -168,11 +175,11 @@ export class AnimationKassiopeiaTool {
     }
   }
 
-  public backInRight(element: HTMLElement, focus = true, time = 1010) {
+  public backInRight(element: HTMLElement, focus = true, time = 810) {
     if (element instanceof HTMLElement) {
       this.clean(element);
       const animationName = 'backInRight';
-      if (focus) element.focus();
+      if (focus) this.causeFocus(element);
 
       this.byAnimateCSS(element, animationName, time);
 
@@ -184,11 +191,11 @@ export class AnimationKassiopeiaTool {
     }
   }
 
-  public backInUp(element: HTMLElement, focus = true, time = 1010) {
+  public backInUp(element: HTMLElement, focus = true, time = 810) {
     if (element instanceof HTMLElement) {
       this.clean(element);
       const animationName = 'backInUp';
-      if (focus) element.focus();
+      if (focus) this.causeFocus(element);
 
       this.byAnimateCSS(element, animationName, time);
 
@@ -200,11 +207,11 @@ export class AnimationKassiopeiaTool {
     }
   }
 
-  public zoomOutDown(element: HTMLElement, focus = true, time = 1010) {
+  public zoomOutDown(element: HTMLElement, focus = true, time = 810) {
     if (element instanceof HTMLElement) {
       this.clean(element);
       const animationName = 'zoomOutDown';
-      if (focus) element.focus();
+      if (focus) this.causeFocus(element);
 
       this.byAnimateCSS(element, animationName, time);
 
@@ -216,11 +223,11 @@ export class AnimationKassiopeiaTool {
     }
   }
 
-  public zoomOutUp(element: HTMLElement, focus = true, time = 1010) {
+  public zoomOutUp(element: HTMLElement, focus = true, time = 810) {
     if (element instanceof HTMLElement) {
       this.clean(element);
       const animationName = 'zoomOutUp';
-      if (focus) element.focus();
+      if (focus) this.causeFocus(element);
 
       this.byAnimateCSS(element, animationName, time);
 
@@ -232,11 +239,11 @@ export class AnimationKassiopeiaTool {
     }
   }
 
-  public zoomOutStart(element: HTMLElement, focus = true, time = 1010) {
+  public zoomOutStart(element: HTMLElement, focus = true, time = 810) {
     if (element instanceof HTMLElement) {
       this.clean(element);
       const animationName = 'zoomOutLeft';
-      if (focus) element.focus();
+      if (focus) this.causeFocus(element);
 
       this.byAnimateCSS(element, animationName, time);
 
@@ -248,11 +255,11 @@ export class AnimationKassiopeiaTool {
     }
   }
 
-  public zoomOutEnd(element: HTMLElement, focus = true, time = 1010) {
+  public zoomOutEnd(element: HTMLElement, focus = true, time = 810) {
     if (element instanceof HTMLElement) {
       this.clean(element);
       const animationName = 'zoomOutRight';
-      if (focus) element.focus();
+      if (focus) this.causeFocus(element);
 
       this.byAnimateCSS(element, animationName, time);
 
@@ -264,10 +271,10 @@ export class AnimationKassiopeiaTool {
     }
   }
 
-  public otherAnimationByName(element: HTMLElement, name: string, focus = true, time = 1010) {
+  public otherAnimationByName(element: HTMLElement, name: string, focus = true, time = 810) {
     this.clean(element);
     if (element instanceof HTMLElement) {
-      if (focus) element.focus();
+      if (focus) this.causeFocus(element);
       const animationName = name.replace('animate__', '');
 
       this.byAnimateCSS(element, animationName, time);

@@ -32,6 +32,13 @@ var AnimationKassiopeiaTool = /** @class */ (function () {
         element.classList.remove(this.principalClassName);
         element.classList.remove("".concat(this.animateTemplate).concat(animationName));
     };
+    AnimationKassiopeiaTool.prototype.causeFocus = function (element) {
+        var _a;
+        element.focus();
+        if (!(element instanceof HTMLInputElement)) {
+            (_a = element.querySelector('input')) === null || _a === void 0 ? void 0 : _a.focus();
+        }
+    };
     AnimationKassiopeiaTool.prototype.clean = function (element) {
         var _this = this;
         element.classList.remove(this.principalClassName);
@@ -42,12 +49,12 @@ var AnimationKassiopeiaTool = /** @class */ (function () {
     };
     AnimationKassiopeiaTool.prototype.bounce = function (element, focus, time) {
         if (focus === void 0) { focus = true; }
-        if (time === void 0) { time = 1010; }
+        if (time === void 0) { time = 810; }
         if (element instanceof HTMLElement) {
             this.clean(element);
             var animationName = 'bounce';
             if (focus)
-                element.focus();
+                this.causeFocus(element);
             this.byAnimateCSS(element, animationName, time);
             var onComplete_1 = function () { };
             setTimeout(function () {
@@ -58,12 +65,12 @@ var AnimationKassiopeiaTool = /** @class */ (function () {
     };
     AnimationKassiopeiaTool.prototype.bounceInDown = function (element, focus, time) {
         if (focus === void 0) { focus = true; }
-        if (time === void 0) { time = 1010; }
+        if (time === void 0) { time = 810; }
         if (element instanceof HTMLElement) {
             this.clean(element);
             var animationName = 'bounceInDown';
             if (focus)
-                element.focus();
+                this.causeFocus(element);
             this.byAnimateCSS(element, animationName, time);
             var onComplete_2 = function () { };
             setTimeout(function () {
@@ -74,12 +81,12 @@ var AnimationKassiopeiaTool = /** @class */ (function () {
     };
     AnimationKassiopeiaTool.prototype.flash = function (element, focus, time) {
         if (focus === void 0) { focus = true; }
-        if (time === void 0) { time = 1010; }
+        if (time === void 0) { time = 810; }
         if (element instanceof HTMLElement) {
             this.clean(element);
             var animationName = 'flash';
             if (focus)
-                element.focus();
+                this.causeFocus(element);
             this.byAnimateCSS(element, animationName, time);
             var onComplete_3 = function () { };
             setTimeout(function () {
@@ -90,12 +97,12 @@ var AnimationKassiopeiaTool = /** @class */ (function () {
     };
     AnimationKassiopeiaTool.prototype.shakeX = function (element, focus, time) {
         if (focus === void 0) { focus = true; }
-        if (time === void 0) { time = 1010; }
+        if (time === void 0) { time = 810; }
         if (element instanceof HTMLElement) {
             this.clean(element);
             var animationName = 'shakeX';
             if (focus)
-                element.focus();
+                this.causeFocus(element);
             this.byAnimateCSS(element, animationName, time);
             var onComplete_4 = function () { };
             setTimeout(function () {
@@ -106,12 +113,12 @@ var AnimationKassiopeiaTool = /** @class */ (function () {
     };
     AnimationKassiopeiaTool.prototype.shakeY = function (element, focus, time) {
         if (focus === void 0) { focus = true; }
-        if (time === void 0) { time = 1010; }
+        if (time === void 0) { time = 810; }
         if (element instanceof HTMLElement) {
             this.clean(element);
             var animationName = 'shakeY';
             if (focus)
-                element.focus();
+                this.causeFocus(element);
             this.byAnimateCSS(element, animationName, time);
             var onComplete_5 = function () { };
             setTimeout(function () {
@@ -122,12 +129,12 @@ var AnimationKassiopeiaTool = /** @class */ (function () {
     };
     AnimationKassiopeiaTool.prototype.heartBeat = function (element, focus, time) {
         if (focus === void 0) { focus = true; }
-        if (time === void 0) { time = 1010; }
+        if (time === void 0) { time = 810; }
         if (element instanceof HTMLElement) {
             this.clean(element);
             var animationName = 'heartBeat';
             if (focus)
-                element.focus();
+                this.causeFocus(element);
             this.byAnimateCSS(element, animationName, time);
             var onComplete_6 = function () { };
             setTimeout(function () {
@@ -138,12 +145,12 @@ var AnimationKassiopeiaTool = /** @class */ (function () {
     };
     AnimationKassiopeiaTool.prototype.backInDown = function (element, focus, time) {
         if (focus === void 0) { focus = true; }
-        if (time === void 0) { time = 1010; }
+        if (time === void 0) { time = 810; }
         if (element instanceof HTMLElement) {
             this.clean(element);
             var animationName = 'backInDown';
             if (focus)
-                element.focus();
+                this.causeFocus(element);
             this.byAnimateCSS(element, animationName, time);
             var onComplete_7 = function () { };
             setTimeout(function () {
@@ -154,12 +161,12 @@ var AnimationKassiopeiaTool = /** @class */ (function () {
     };
     AnimationKassiopeiaTool.prototype.backInLeft = function (element, focus, time) {
         if (focus === void 0) { focus = true; }
-        if (time === void 0) { time = 1010; }
+        if (time === void 0) { time = 810; }
         if (element instanceof HTMLElement) {
             this.clean(element);
             var animationName = 'backInLeft';
             if (focus)
-                element.focus();
+                this.causeFocus(element);
             this.byAnimateCSS(element, animationName, time);
             var onComplete_8 = function () { };
             setTimeout(function () {
@@ -170,12 +177,12 @@ var AnimationKassiopeiaTool = /** @class */ (function () {
     };
     AnimationKassiopeiaTool.prototype.backInRight = function (element, focus, time) {
         if (focus === void 0) { focus = true; }
-        if (time === void 0) { time = 1010; }
+        if (time === void 0) { time = 810; }
         if (element instanceof HTMLElement) {
             this.clean(element);
             var animationName = 'backInRight';
             if (focus)
-                element.focus();
+                this.causeFocus(element);
             this.byAnimateCSS(element, animationName, time);
             var onComplete_9 = function () { };
             setTimeout(function () {
@@ -186,12 +193,12 @@ var AnimationKassiopeiaTool = /** @class */ (function () {
     };
     AnimationKassiopeiaTool.prototype.backInUp = function (element, focus, time) {
         if (focus === void 0) { focus = true; }
-        if (time === void 0) { time = 1010; }
+        if (time === void 0) { time = 810; }
         if (element instanceof HTMLElement) {
             this.clean(element);
             var animationName = 'backInUp';
             if (focus)
-                element.focus();
+                this.causeFocus(element);
             this.byAnimateCSS(element, animationName, time);
             var onComplete_10 = function () { };
             setTimeout(function () {
@@ -202,12 +209,12 @@ var AnimationKassiopeiaTool = /** @class */ (function () {
     };
     AnimationKassiopeiaTool.prototype.zoomOutDown = function (element, focus, time) {
         if (focus === void 0) { focus = true; }
-        if (time === void 0) { time = 1010; }
+        if (time === void 0) { time = 810; }
         if (element instanceof HTMLElement) {
             this.clean(element);
             var animationName = 'zoomOutDown';
             if (focus)
-                element.focus();
+                this.causeFocus(element);
             this.byAnimateCSS(element, animationName, time);
             var onComplete_11 = function () { };
             setTimeout(function () {
@@ -218,12 +225,12 @@ var AnimationKassiopeiaTool = /** @class */ (function () {
     };
     AnimationKassiopeiaTool.prototype.zoomOutUp = function (element, focus, time) {
         if (focus === void 0) { focus = true; }
-        if (time === void 0) { time = 1010; }
+        if (time === void 0) { time = 810; }
         if (element instanceof HTMLElement) {
             this.clean(element);
             var animationName = 'zoomOutUp';
             if (focus)
-                element.focus();
+                this.causeFocus(element);
             this.byAnimateCSS(element, animationName, time);
             var onComplete_12 = function () { };
             setTimeout(function () {
@@ -234,12 +241,12 @@ var AnimationKassiopeiaTool = /** @class */ (function () {
     };
     AnimationKassiopeiaTool.prototype.zoomOutStart = function (element, focus, time) {
         if (focus === void 0) { focus = true; }
-        if (time === void 0) { time = 1010; }
+        if (time === void 0) { time = 810; }
         if (element instanceof HTMLElement) {
             this.clean(element);
             var animationName = 'zoomOutLeft';
             if (focus)
-                element.focus();
+                this.causeFocus(element);
             this.byAnimateCSS(element, animationName, time);
             var onComplete_13 = function () { };
             setTimeout(function () {
@@ -250,12 +257,12 @@ var AnimationKassiopeiaTool = /** @class */ (function () {
     };
     AnimationKassiopeiaTool.prototype.zoomOutEnd = function (element, focus, time) {
         if (focus === void 0) { focus = true; }
-        if (time === void 0) { time = 1010; }
+        if (time === void 0) { time = 810; }
         if (element instanceof HTMLElement) {
             this.clean(element);
             var animationName = 'zoomOutRight';
             if (focus)
-                element.focus();
+                this.causeFocus(element);
             this.byAnimateCSS(element, animationName, time);
             var onComplete_14 = function () { };
             setTimeout(function () {
@@ -266,11 +273,11 @@ var AnimationKassiopeiaTool = /** @class */ (function () {
     };
     AnimationKassiopeiaTool.prototype.otherAnimationByName = function (element, name, focus, time) {
         if (focus === void 0) { focus = true; }
-        if (time === void 0) { time = 1010; }
+        if (time === void 0) { time = 810; }
         this.clean(element);
         if (element instanceof HTMLElement) {
             if (focus)
-                element.focus();
+                this.causeFocus(element);
             var animationName = name.replace('animate__', '');
             this.byAnimateCSS(element, animationName, time);
             var onComplete_15 = function () { };

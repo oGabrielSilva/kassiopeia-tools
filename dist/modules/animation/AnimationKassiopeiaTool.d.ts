@@ -6,6 +6,7 @@ export declare class AnimationKassiopeiaTool {
     protected configure(): void;
     protected byAnimateCSS(element: HTMLElement, animationName: string, time: number): void;
     protected cleanAnimateCSS(element: HTMLElement, animationName: string, event?: () => void): void;
+    protected causeFocus(element: HTMLElement): void;
     clean(element: HTMLElement): void;
     bounce(element: HTMLElement, focus?: boolean, time?: number): {
         addEventOnCompletion: (cb: () => void) => () => void;
