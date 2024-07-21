@@ -307,4 +307,8 @@ export class AnimationKassiopeiaTool {
 
     return AnimationKassiopeiaTool.instance;
   }
+
+  public static get fast() {
+    return AnimationKassiopeiaTool.get();
+  }
 }

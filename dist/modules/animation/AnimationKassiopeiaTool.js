@@ -301,6 +301,13 @@ var AnimationKassiopeiaTool = /** @class */ (function () {
         }
         return AnimationKassiopeiaTool.instance;
     };
+    Object.defineProperty(AnimationKassiopeiaTool, "fast", {
+        get: function () {
+            return AnimationKassiopeiaTool.get();
+        },
+        enumerable: false,
+        configurable: true
+    });
     AnimationKassiopeiaTool.instance = null;
     return AnimationKassiopeiaTool;
 }());

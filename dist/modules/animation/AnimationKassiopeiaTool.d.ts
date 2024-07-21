@@ -56,4 +56,5 @@ export declare class AnimationKassiopeiaTool {
     destroy(): void;
     rebuild(): void;
     static get(): AnimationKassiopeiaTool;
+    static get fast(): AnimationKassiopeiaTool;
 }
