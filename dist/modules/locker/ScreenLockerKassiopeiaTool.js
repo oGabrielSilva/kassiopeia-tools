@@ -63,7 +63,7 @@ var ScreenLockerKassiopeiaTool = /** @class */ (function () {
         return this.locker !== null && document.body.contains(this.locker);
     };
     ScreenLockerKassiopeiaTool.prototype.lock = function () {
-        if (this.isLocked)
+        if (this.isLocked())
             return;
         this.configureLocker();
         this.configureBars();
@@ -71,7 +71,7 @@ var ScreenLockerKassiopeiaTool = /** @class */ (function () {
         document.body.appendChild(this.locker);
     };
     ScreenLockerKassiopeiaTool.prototype.unlock = function () {
-        if (!this.isLocked)
+        if (!this.isLocked())
             return;
         this.locker.remove();
         this.locker = null;
