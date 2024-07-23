@@ -85,6 +85,7 @@ export class ScreenLockerKassiopeiaTool {
   }
 
   public lock() {
+    if (this.isLocked) return;
     this.configureLocker();
 
     this.configureBars();
@@ -95,6 +96,7 @@ export class ScreenLockerKassiopeiaTool {
   }
 
   public unlock() {
+    if (!this.isLocked) return;
     this.locker.remove();
     this.locker = null;
 
