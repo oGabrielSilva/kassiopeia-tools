@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ValidationKassiopeiaTool = void 0;
+var slug = require("slug");
 var ValidationKassiopeiaTool = /** @class */ (function () {
     function ValidationKassiopeiaTool() {
     }
@@ -30,6 +31,18 @@ var ValidationKassiopeiaTool = /** @class */ (function () {
     };
     ValidationKassiopeiaTool.prototype.normalizeURI = function (uri) {
         return typeof uri === 'string' ? encodeURI(uri) : '';
+    };
+    ValidationKassiopeiaTool.prototype.slugify = function (txt, options) {
+        if (options === void 0) { options = {
+            lower: false,
+            locale: 'en',
+            trim: true,
+            fallback: true,
+            replacement: '-',
+            charmap: slug.charmap,
+            multicharmap: slug.multicharmap,
+        }; }
+        return slug(txt, options);
     };
     ValidationKassiopeiaTool.get = function () {
         if (!(ValidationKassiopeiaTool.instance instanceof ValidationKassiopeiaTool)) {

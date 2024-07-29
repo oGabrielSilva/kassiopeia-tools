@@ -1,3 +1,4 @@
+import slug = require('slug');
 export declare class ValidationKassiopeiaTool {
     protected static instance: ValidationKassiopeiaTool;
     static readonly emailRegex: RegExp;
@@ -8,6 +9,7 @@ export declare class ValidationKassiopeiaTool {
     isPasswordValid(password: string): boolean;
     normalizeText(text: string): string;
     normalizeURI(uri: string): string;
+    slugify(txt: string, options?: slug.Options): string;
     static get(): ValidationKassiopeiaTool;
     static get fast(): ValidationKassiopeiaTool;
 }

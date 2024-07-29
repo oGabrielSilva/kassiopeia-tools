@@ -1,3 +1,5 @@
+import slug = require('slug');
+
 export class ValidationKassiopeiaTool {
   protected static instance: ValidationKassiopeiaTool = null;
 
@@ -40,6 +42,21 @@ export class ValidationKassiopeiaTool {
 
   public normalizeURI(uri: string) {
     return typeof uri === 'string' ? encodeURI(uri) : '';
+  }
+
+  public slugify(
+    txt: string,
+    options: slug.Options = {
+      lower: false,
+      locale: 'en',
+      trim: true,
+      fallback: true,
+      replacement: '-',
+      charmap: slug.charmap,
+      multicharmap: slug.multicharmap,
+    }
+  ) {
+    return slug(txt, options);
   }
 
   public static get() {
