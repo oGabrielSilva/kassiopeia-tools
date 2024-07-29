@@ -42,6 +42,7 @@ export class AnimationKassiopeiaTool {
 
   public clean(element: HTMLElement) {
     element.classList.remove(this.principalClassName);
+    element.style.removeProperty('animation-duration');
     element.classList.forEach((c) => {
       if (c.startsWith(this.animateTemplate)) element.classList.remove(c);
     });

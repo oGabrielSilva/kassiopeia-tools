@@ -42,6 +42,7 @@ var AnimationKassiopeiaTool = /** @class */ (function () {
     AnimationKassiopeiaTool.prototype.clean = function (element) {
         var _this = this;
         element.classList.remove(this.principalClassName);
+        element.style.removeProperty('animation-duration');
         element.classList.forEach(function (c) {
             if (c.startsWith(_this.animateTemplate))
                 element.classList.remove(c);
